@@ -1,0 +1,4 @@
+white_path:
+  - /api/webhook/idl-update
+  - /api/user/login
+  - /api/user/sms
