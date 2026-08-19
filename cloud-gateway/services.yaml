@@ -3,3 +3,36 @@ servers:
   user:
     service_name: user.service.rpc   # etcd 注册的服务名
     idl_path: user/user-center/user.thrift
+    routes:
+      - path: /api/user/login
+        method: Login
+        http_method: POST
+      - path: /api/user/sendSmsMessage
+        method: SendSmsMessage
+        http_method: GET
+      - path: /api/user/logout
+        method: Logout
+        http_method: POST
+      - path: /api/user/queryUserHeaderPage
+        method: QueryUserHeaderPage
+        http_method: GET
+      - path: /api/user/queryUserHeaderList
+        method: QueryUserHeaderList
+        http_method: GET
+      - path: /api/user/queryUserHeaderInfo
+        method: QueryUserHeaderInfo
+        http_method: GET
+      - path: /api/user/queryUserPositionPage
+        method: QueryUserPositionPage
+        http_method: GET
+      - path: /api/user/saveUserPosition
+        method: SaveUserPosition
+        http_method: POST
+      - path: /api/user/updateUserPosition
+        method: UpdateUserPosition
+        http_method: POST
+      - path: /api/user/deleteUserPosition
+        method: DeleteUserPosition
+        http_method: POST
+
+
