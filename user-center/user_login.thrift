@@ -7,12 +7,12 @@ struct LoginRequest {
     2: string phone
     3: string code
     4: string password
-    5: i32 loginType
+    5: optional i32 loginType
     6: string uuid
 }
 
 struct LoginResponse {
     1: string accessToken
-    2: i64 expireTime
+    2: optional i64 expireTime
 }
 

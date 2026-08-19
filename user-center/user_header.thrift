@@ -27,10 +27,10 @@ struct UserHeaderResponse {
     1: string username
     2: string password
     3: string nickname
-    4: i32 gender
+    4: required i32 gender
     5: string avatar
     6: string phone
-    7: i32 status
+    7: required i32 status
 
     255: base.BaseResponse BaseResponse
 }
