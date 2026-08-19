@@ -1,8 +1,5 @@
 # 服务配置：新增服务只需在此追加，网关自动热加载
-services:
-  echo:
-    service_name: echo.rpc    # etcd 注册的服务名
-    idl_path: echo/echo.thrift
+servers:
   user:
-    service_name: user.rpc
-    idl_path: user/user.thrift
+    service_name: user.service.rpc   # etcd 注册的服务名
+    idl_path: user/user-center/user.thrift
