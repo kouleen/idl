@@ -2,7 +2,7 @@
 servers:
   user:
     service_name: user.service.rpc   # etcd 注册的服务名
-    idl_path: user/user-center/user.thrift
+    idl_path: user-center/user.thrift
     routes:
       - path: /api/user/login
         method: Login
