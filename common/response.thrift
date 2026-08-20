@@ -2,7 +2,7 @@ namespace java io.github.kouleen.thrift.common
 namespace go common
 namespace py common
 
-struct BaseResponse {
+struct BaseResp {
     1: optional string sign
     2: required HttpStatus code
     3: optional string message
