@@ -48,9 +48,18 @@ jobs:
       - name: Generate kitex_gen SDK
         run: |
           mkdir -p kitex_gen
+          echo "==== current pwd ===="
+          pwd
+          echo "==== ls -la ===="
+          ls -la
+          echo "==== ls -la ./ || true ===="
+          ls -la ./ || true
+          echo "==== ls -la ./idl || true ===="
+          ls -la ./idl || true
+          
           find ./idl -type f -name "*.thrift" | while read -r file; do
-            echo "processing $file"
-            kitex -module github.com/kouleen/idl -client "$file"
+          echo "processing $file"
+          kitex -module github.com/kouleen/idl -client "$file"
           done
 
       - name: Check code change
