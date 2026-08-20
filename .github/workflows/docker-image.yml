@@ -1,0 +1,64 @@
+name: GitHub Merge Trigger Webhook
+on:
+  push:
+    branches: ["release"]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Custom Callback API
+        id: call_webhook
+        run: |
+          curl --connect-timeout 10 --max-time 20 -X GET "https://webapi.kouleen.cn/api/webhook/update?secret=${{ secrets.SECRET }}"
+
+  build:
+    needs: notify   # 关键：等待notify job完成才执行build，串行：先通知，后构建SDK
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25"
+          cache: false
+
+      - name: Install Kitex
+        run: go install github.com/cloudwego/kitex/tool/cmd/kitex@latest
+
+      - name: Generate kitex_gen SDK
+        run: |
+          mkdir -p kitex_gen
+          find ./idl -type f -name "*.thrift" | while read -r file; do
+            echo "processing $file"
+            kitex -module github.com/kouleen/idl -client "$file"
+          done
+
+      - name: Check code change
+        id: diff_check
+        run: |
+          git diff --quiet kitex_gen || echo "HAS_CHANGE=true" >> $GITHUB_ENV
+          
+
+      - name: Commit generated SDK code
+        if: env.HAS_CHANGE == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add kitex_gen
+          git commit -m "chore(auto): update kitex_gen sdk by idl change"
+          git push origin release
+
+      - name: Bump version tag
+        if: env.HAS_CHANGE == 'true'
+        run: |
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          NEW_VERSION=$(echo $LATEST_TAG | awk -F. '{printf "v%d.%d.%d", $1+0, $2+0, $3+1}')
+          git tag "${NEW_VERSION}"
+          git push origin "${NEW_VERSION}"
