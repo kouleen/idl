@@ -7,10 +7,22 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Call Custom Callback API
-        id: call_webhook
-        run: |
-          curl --connect-timeout 10 --max-time 20 -X GET "https://webapi.kouleen.cn/api/webhook/update?secret=${{ secrets.SECRET }}"
+    - name: Call Custom Callback API
+      id: call_webhook
+      run: |
+        RESP_BODY=$(curl -s -o response.txt -w "%{http_code}" \
+          --connect-timeout 10 \
+          --max-time 20 \
+          -X GET "https://webapi.kouleen.cn/api/webhook/update?secret=${{ secrets.SECRET }}")
+        HTTP_CODE=$RESP_BODY
+        echo "HTTP_CODE=${HTTP_CODE}"
+        echo "Response body:"
+        cat response.txt
+        
+        if [[ "${HTTP_CODE}" -ne 200 ]]; then
+          echo "❌ Webhook调用失败，http status: ${HTTP_CODE}"
+          exit 1
+        fi
 
   build:
     needs: notify   # 关键：等待notify job完成才执行build，串行：先通知，后构建SDK
