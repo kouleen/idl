@@ -53,10 +53,9 @@ jobs:
           echo "==== ls -la ===="
           ls -la
           
-          # 搜索整个仓库所有thrift文件，不再写死 ./idl
           find . -type f -name "*.thrift" | while read -r file; do
           echo "processing $file"
-          kitex -module github.com/kouleen/idl -client "$file"
+          kitex -module github.com/kouleen/idl "$file"
           done
 
       - name: Check code change
