@@ -33,6 +33,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0   # 重要，要拉全分支引用
           persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -73,17 +74,17 @@ jobs:
             git checkout -b gen-sdk
           fi
           
-          # 把release分支的thrift源码也复制过来（gen‑sdk分支同时保留idl+kitex_gen）
-          git checkout release -- *.thrift go.mod go.sum
+          # 从release分支拿最新thrift、go.mod，去掉go.sum（防止文件不存在报错）
+          git checkout release -- *.thrift go.mod
           
-          git add kitex_gen *.thrift go.mod go.sum
+          git add kitex_gen *.thrift go.mod
           
           # 判断kitex_gen是否真的发生变化，没有变化就直接退出，不生成commit
           if git diff --quiet --cached kitex_gen; then
             echo "kitex_gen无变更，跳过提交"
             exit 0
           fi
-
+          
           git commit -m "chore(auto): update kitex_gen from release $GITHUB_SHA"
           git push origin gen-sdk --force-with-lease
 
