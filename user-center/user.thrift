@@ -6,7 +6,7 @@ include "user_login.thrift"
 include "user_header.thrift"
 include "user_position.thrift"
 
-service UserHeaderService {
+service UserService {
     // 用户登录
     user_login.LoginResponse Login(1: user_login.LoginRequest loginRequest)
     // 发送手机号验证码

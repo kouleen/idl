@@ -34,5 +34,12 @@ servers:
       - path: /api/user/deleteUserPosition
         method: DeleteUserPosition
         http_method: POST
+  system:
+    service_name: system.service.rpc   # etcd 注册的服务名
+    idl_path: system-center/system.thrift
+    routes:
+      - path: /api/system/querySystemDictHeaderPage
+        method: QuerySystemDictHeaderPage
+        http_method: GET
 
 
