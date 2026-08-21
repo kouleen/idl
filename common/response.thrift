@@ -3,11 +3,12 @@ namespace go common
 namespace py common
 
 struct BaseResp {
-    1: optional string sign
+    1: string sign
     2: required HttpStatus code
-    3: optional string message
+    3: string message
     4: optional string data
-    5: optional string traceId
+    5: required string traceId
+    6: required i64 timestamp
 }
 
 enum HttpStatus {

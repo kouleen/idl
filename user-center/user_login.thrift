@@ -3,16 +3,21 @@ namespace go user
 namespace py user
 
 struct LoginRequest {
-    1: string username
-    2: string phone
-    3: string code
-    4: string password
-    5: optional i32 loginType
-    6: string uuid
+    1: string username                  // 用户名
+    2: string phone                     // 手机号
+    3: string code                      // 验证码
+    4: string password                  // 密码
+    5: optional LoginType loginType     // 登录方式
+    6: string uuid                      // 验证码唯一标识
 }
 
 struct LoginResponse {
     1: string accessToken
     2: optional i64 expireTime
+}
+
+enum LoginType {
+    LOGIN_PHONE = 1         // 手机号登录
+    LOGIN_PWD   = 2         // 密码登录
 }
 

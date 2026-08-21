@@ -3,6 +3,7 @@ namespace go user
 namespace py user
 
 include "../common/base.thrift"
+include "../common/constant.thrift"
 
 struct PageRequest {
     1: optional i64 current = 1
@@ -11,26 +12,26 @@ struct PageRequest {
 
 struct UserHeaderRequest {
     1: optional list<i64> userIdList
-    2: optional string username
-    3: optional string password
-    4: optional string nickname
-    5: optional i32 gender
-    6: optional string avatar
-    7: optional string phone
-    8: optional i32 status
+    2: optional string username                     // 用户名
+    3: optional string password                     // 用户密码
+    4: optional string nickname                     // 用户昵称
+    5: optional i32 gender                          // 性别 1：男 2：女
+    6: optional string avatar                       // 头像
+    7: optional string phone                        // 手机号
+    8: optional constant.BaseStatus status          // 状态
     9: optional PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }
 
 struct UserHeaderResponse {
-    1: string username
-    2: string password
-    3: string nickname
-    4: required i32 gender
-    5: string avatar
-    6: string phone
-    7: required i32 status
+    1: string username                              // 用户名
+    2: string password                              // 用户密码
+    3: string nickname                              // 用户昵称
+    4: required i32 gender                          // 性别 1：男 2：女
+    5: string avatar                                // 头像
+    6: string phone                                 // 手机号
+    7: required constant.BaseStatus status          // 状态
 
     255: base.BaseResponse BaseResponse
 }
