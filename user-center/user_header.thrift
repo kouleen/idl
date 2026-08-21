@@ -5,11 +5,6 @@ namespace py user
 include "../common/base.thrift"
 include "../common/constant.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct UserHeaderRequest {
     1: optional list<i64> userIdList
     2: optional string username                     // 用户名
@@ -19,7 +14,7 @@ struct UserHeaderRequest {
     6: optional string avatar                       // 头像
     7: optional string phone                        // 手机号
     8: optional constant.BaseStatus status          // 状态
-    9: optional PageRequest PageRequest
+    9: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }

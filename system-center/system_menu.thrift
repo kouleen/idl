@@ -5,11 +5,6 @@ namespace py system
 include "../common/base.thrift"
 include "../common/constant.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct SystemMenuRequest {
     1: optional string menuName                      // 菜单名称
     2: optional i64 parentId                         // 父菜单ID
@@ -20,13 +15,13 @@ struct SystemMenuRequest {
     7: optional string routeName                     // 路由名称
     8: optional i32 isFrame                          // 是否为外链（0否 1是）
     9: optional i32 isCache                          // 是否缓存（0不缓存 1缓存）
-    10: optional i32 menuType                        // 菜单类型（1目录 2菜单 3按钮）
+    10: optional MenuType menuType                   // 菜单类型（1目录 2菜单 3按钮）
     11: optional i32 visible                         // 是否隐藏（0隐藏 1显示）
     12: optional constant.BaseStatus status          // 状态
     13: optional string perms                        // 权限标识
     14: optional string icon                         // 菜单图标
     15: optional i64 roleId                          // 角色ID
-    16: optional PageRequest PageRequest
+    16: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }
@@ -41,7 +36,7 @@ struct SystemMenuResponse {
     7: string routeName                     // 路由名称
     8: i32 isFrame                          // 是否为外链（0否 1是）
     9: i32 isCache                          // 是否缓存（0不缓存 1缓存）
-    10: i32 menuType                        // 菜单类型（1目录 2菜单 3按钮）
+    10: MenuType menuType                   // 菜单类型（1目录 2菜单 3按钮）
     11: i32 visible                         // 是否隐藏（0隐藏 1显示）
     12: constant.BaseStatus status          // 状态
     13: string perms                        // 权限标识
@@ -54,4 +49,10 @@ struct SystemMenuResponse {
 struct SystemMenuPageResponse {
     1: required i64 total,
     2: required list<SystemMenuResponse> records
+}
+
+enum MenuType {
+    DIRECTORY       = 1
+    MENU            = 2
+    BUTTON          = 3
 }

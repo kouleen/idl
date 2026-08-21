@@ -2,6 +2,11 @@ namespace java io.github.kouleen.thrift.common
 namespace go common
 namespace py common
 
+struct PageRequest {
+    1: optional i64 current = 1
+    2: optional i64 size = 10
+}
+
 struct BaseRequest {
     1: optional i64 id          // ID
     2: optional i32 isDelete    // 删除标识 1：删除 0：未删除

@@ -5,11 +5,6 @@ namespace py system
 include "../common/base.thrift"
 include "../common/constant.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct SystemTemplateRequest {
     1: optional string templateCode          // 模板编码
     2: optional string templateName          // 模板名称
@@ -17,7 +12,7 @@ struct SystemTemplateRequest {
     4: optional string templateContent       // 模板内容
     5: optional constant.BaseStatus status   // 状态
     6: optional string remark                // 备注
-    7: optional PageRequest PageRequest
+    7: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }

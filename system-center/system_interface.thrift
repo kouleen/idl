@@ -5,11 +5,6 @@ namespace py system
 include "../common/base.thrift"
 include "../common/constant.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct SystemInterfaceRequest {
     1: optional string requestPath              // 请求路径
     2: optional string interfaceName            // 接口全类名
@@ -19,7 +14,7 @@ struct SystemInterfaceRequest {
     6: optional string version                  // 接口版本
     7: optional constant.BaseStatus status      // 状态
     8: optional string remark                   // 备注
-    9: optional PageRequest PageRequest
+    9: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }
@@ -43,5 +38,12 @@ struct SystemInterfacePageResponse {
 }
 
 enum MethodType {
-
+    GET     = 1
+    HEAD    = 2
+    POST    = 3
+    PUT     = 4
+    PATCH   = 5
+    DELETE  = 6
+    OPTIONS = 7
+    TRACE   = 8
 }

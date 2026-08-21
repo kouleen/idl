@@ -2,11 +2,6 @@ namespace java user
 
 include "../common/base.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct UserPositionRequest {
     1: optional i64 userId                  // 用户id
     2: optional double latitude             // 纬度
@@ -18,7 +13,7 @@ struct UserPositionRequest {
     8: optional string fullAddress          // 完整地址
     9: optional string country              // 国家
     10: optional string countryCode         // 国家代码
-    11: optional PageRequest PageRequest
+    11: optional base.PageRequest PageRequest
     255: optional base.BaseRequest BaseRequest
 }
 

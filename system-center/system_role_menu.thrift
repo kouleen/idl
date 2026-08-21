@@ -5,11 +5,6 @@ namespace py system
 include "../common/base.thrift"
 include "../common/constant.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct SystemRoleMenuRequest {
     1: optional i64 roleId                      // 角色ID
     2: optional string roleName                 // 角色名称
@@ -17,7 +12,7 @@ struct SystemRoleMenuRequest {
     4: optional list<i64> menuIds               // 菜单ID
     5: optional constant.BaseStatus status      // 状态
     6: optional string remark                   // 备注
-    7: optional PageRequest PageRequest
+    7: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }

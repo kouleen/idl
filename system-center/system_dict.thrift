@@ -5,17 +5,12 @@ namespace py system
 include "../common/base.thrift"
 include "../common/constant.thrift"
 
-struct PageRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
-}
-
 struct SystemDictHeaderRequest {
     1: optional string dictName                     // 字典名称
     2: optional string dictType                     // 字典类型
     3: optional constant.BaseStatus status          // 状态
     4: optional string remark                       // 备注
-    5: optional PageRequest PageRequest
+    5: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }
@@ -42,7 +37,7 @@ struct SystemDictLineRequest {
     5: optional string listClass                    // 表格回显样式
     6: optional constant.BaseStatus status          // 状态
     7: optional string remark                       // 备注
-    8: optional PageRequest PageRequest
+    8: optional base.PageRequest PageRequest
 
     255: optional base.BaseRequest BaseRequest
 }
