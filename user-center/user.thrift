@@ -9,7 +9,7 @@ include "user_position.thrift"
 
 service UserService {
     // 发送图形验证码
-    bool Captcha(1: user_login.LoginRequest req)
+    user_login.CaptchaResponse Captcha(1: user_login.LoginRequest req)
     // 发送手机号验证码
     bool SmsCode(1: string phone)
     // 用户登录

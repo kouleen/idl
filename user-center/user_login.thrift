@@ -17,6 +17,12 @@ struct LoginResponse {
     2: i64 expireTime
 }
 
+struct CaptchaResponse {
+    1: bool captchaEnabled
+    2: string img
+    3: string uuid
+}
+
 enum LoginType {
     LOGIN_PHONE = 1         // 手机号登录
     LOGIN_PWD   = 2         // 密码登录
