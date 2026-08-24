@@ -9,5 +9,5 @@ struct RegisterRequest {
     4: string gender        // 性别
     5: string phone         // 手机号
     6: string code          // 验证码
-    7: string uuid
+    7: string uuid          // 密码标识
 }
