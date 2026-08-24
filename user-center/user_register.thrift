@@ -7,7 +7,7 @@ struct RegisterRequest {
     2: string password      // 用户密码
     3: string nickname      // 昵称
     4: string gender        // 性别
-    5: string phone
-    6: string code
+    5: string phone         // 手机号
+    6: string code          // 编码
     7: string uuid
 }
