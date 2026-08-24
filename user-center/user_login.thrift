@@ -9,11 +9,12 @@ struct LoginRequest {
     4: string password                  // 密码
     5: optional LoginType loginType     // 登录方式
     6: string uuid                      // 验证码唯一标识
+    7: bool remember                    // 记住
 }
 
 struct LoginResponse {
     1: string accessToken
-    2: optional i64 expireTime
+    2: i64 expireTime
 }
 
 enum LoginType {

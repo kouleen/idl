@@ -4,12 +4,21 @@ servers:
     service_name: user.service.rpc   # etcd 注册的服务名
     idl_path: user-center/user.thrift
     routes:
+      - path: /api/user/captcha
+        method: Captcha
+        http_method: GET
+      - path: /api/user/sendSmsMessage
+        method: SmsCode
+        http_method: GET
+      - path: /api/user/register
+        method: Register
+        http_method: POST
+      - path: /api/user/resetPwd
+        method: ResetPwd
+        http_method: POST
       - path: /api/user/login
         method: Login
         http_method: POST
-      - path: /api/user/sendSmsMessage
-        method: SendSmsMessage
-        http_method: GET
       - path: /api/user/logout
         method: Logout
         http_method: POST
