@@ -1,4 +1,7 @@
 white_path:
   - /api/webhook/update
   - /api/user/login
-  - /api/user/sms
+  - /api/user/sendSmsMessage
+  - /api/user/captcha
+  - /api/user/register
+  - /api/user/resetPwd
