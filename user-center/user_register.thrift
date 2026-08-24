@@ -3,7 +3,7 @@ namespace go user
 namespace py user
 
 struct RegisterRequest {
-    1: string username
+    1: string username      // 用户名称
     2: string password
     3: string nickname
     4: string gender
