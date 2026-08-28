@@ -7,12 +7,14 @@ jobs:
   build:
     if: success()
     runs-on: ubuntu-latest
+    outputs:
+      should_trigger: ${{ steps.gen_output.outputs.should_trigger }}
+      new_version: ${{ steps.gen_output.outputs.new_version }}
     steps:
-      # 1.检出release分支源码（thrift原始文件）
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # 重要，要拉全分支引用
+          fetch-depth: 0
           persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -25,68 +27,80 @@ jobs:
       - name: Install Kitex
         run: go install github.com/cloudwego/kitex/tool/cmd/kitex@latest
 
-      # 2.kitex生成kitex_gen
       - name: Generate kitex_gen SDK
         run: |
-          rm -rf kitex_gen
-          mkdir -p kitex_gen
+          set -euo pipefail
+          rm -rf ./kitex_gen
+          mkdir -p ./kitex_gen
           echo "==== current pwd ===="
           pwd
-          echo "==== ls -la ===="
-          ls -la
-          
+
           find . -type f -name "*.thrift" | while read -r file; do
-          echo "processing $file"
-          kitex -module github.com/kouleen/idl "$file"
+            echo "processing $file"
+            kitex -module github.com/kouleen/idl -output-dir ./kitex_gen "$file"
           done
 
-      # 3.切换/创建 gen‑sdk 分支，把生成代码放这里
-      - name: Commit SDK to gen‑sdk branch
+      - name: Commit SDK to gen-sdk branch
+        id: gen_output
         run: |
+          set -euo pipefail
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 如果分支不存在就创建，存在就切换
+
+          # ===== 关键修复1：把生成的 kitex_gen 移到临时目录，避免切换分支冲突 =====
+          mv ./kitex_gen /tmp/kitex_gen_new
+
+          # 强制切换到 gen-sdk 分支（-f 覆盖未跟踪文件，不会报错）
           if git show-ref --verify --quiet refs/heads/gen-sdk; then
-            git checkout gen-sdk
+            git checkout -f gen-sdk
           else
-            git checkout -b gen-sdk
+            git checkout -f -b gen-sdk
           fi
-          
-          # 从release分支拿最新thrift、go.mod，去掉go.sum（防止文件不存在报错）
-          git checkout release -- *.thrift go.mod
-          
+
+          # ===== 关键修复2：彻底清理 gen-sdk 分支所有内容（跟踪+未跟踪） =====
+          git rm -rf .
+          git clean -fdx
+
+          # 从 release 分支恢复 thrift 和 go.mod（通配符加引号交给 git 处理）
+          git checkout release -- '*.thrift' go.mod
+
+          # ===== 关键修复3：从临时目录移回新生成的 kitex_gen，不会嵌套 =====
+          mv /tmp/kitex_gen_new ./kitex_gen
+
           git add kitex_gen *.thrift go.mod
-          
-          # 判断kitex_gen是否真的发生变化，没有变化就直接退出，不生成commit
+
+          # 判断 kitex_gen 是否变更
           if git diff --quiet --cached kitex_gen; then
-            echo "kitex_gen无变更，跳过提交"
+            echo "kitex_gen无变更，跳过提交、打tag、下游触发"
+            echo "should_trigger=false" >> $GITHUB_OUTPUT
+            echo "new_version=''" >> $GITHUB_OUTPUT
             exit 0
           fi
-          
+
           git commit -m "chore(auto): update kitex_gen from release $GITHUB_SHA"
           git push origin gen-sdk --force-with-lease
 
-      # 4.自动打版本tag（只在gen‑sdk分支操作）
-      - name: Bump semantic version tag
-        id: bump_tag
-        run: |
-          # 获取远程最新tag，没有则默认v0.0.0
+          # 计算新版本 tag
           LATEST_TAG=$(git ls-remote --tags --sort="v:refname" origin | grep -o "v[0-9]*\.[0-9]*\.[0-9]*$" | tail -n1 || echo "v0.0.0")
           echo "latest tag: $LATEST_TAG"
-          NEW_VERSION=$(echo $LATEST_TAG | awk -F. '{printf "v%d.%d.%d", $1+0, $2+0, $3+1}')
-          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
-          
+          NEW_VERSION=$(echo "$LATEST_TAG" | awk -F. '{printf "v%d.%d.%d", $1+0, $2+0, $3+1}')
+          echo "NEW_VERSION=${NEW_VERSION}"
+
           git tag "${NEW_VERSION}"
           git push origin "${NEW_VERSION}"
 
+          echo "should_trigger=true" >> $GITHUB_OUTPUT
+          echo "new_version=${NEW_VERSION}" >> $GITHUB_OUTPUT
+
   notify:
     runs-on: ubuntu-latest
-    needs: build   # 关键：等待build job完成才执行notify，串行：先构建SDK，后通知
+    needs: build
+    if: ${{ needs.build.outputs.should_trigger == 'true' }}
     steps:
       - name: Call Custom Callback API
         id: call_webhook
         run: |
+          set -euo pipefail
           RESP_BODY=$(curl -s -o response.txt -w "%{http_code}" \
             --connect-timeout 10 \
             --max-time 20 \
@@ -95,8 +109,41 @@ jobs:
           echo "HTTP_CODE=${HTTP_CODE}"
           echo "Response body:"
           cat response.txt
-          
           if [[ "${HTTP_CODE}" -ne 200 ]]; then
             echo "❌ Webhook调用失败，http status: ${HTTP_CODE}"
             exit 1
           fi
+
+      - name: Trigger B repo common workflow
+        env:
+          GH_PAT: ${{ secrets.CROSS_REPO_PAT }}
+          TARGET_OWNER: kouleen
+          TARGET_REPO: common
+          TARGET_WORKFLOW: auto_update_idl.yml
+          TARGET_BRANCH: release
+          NEW_VERSION: ${{ needs.build.outputs.new_version }}
+        run: |
+          set -euo pipefail
+          # ===== 关键修复4：curl 加 -f 并检查返回码，API 失败时流水线报错 =====
+          HTTP_CODE=$(curl -s -o /tmp/gh_resp.txt -w "%{http_code}" -f \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token ${GH_PAT}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${TARGET_WORKFLOW}/dispatches \
+            -d '{
+              "ref":"'"${TARGET_BRANCH}"'",
+              "inputs":{
+                "trigger_from_sha":"'"${GITHUB_SHA}"'",
+                "new_idl_version":"'"${NEW_VERSION}"'"
+              }
+            }' || echo "000")
+
+          echo "GitHub API HTTP_CODE=${HTTP_CODE}"
+          cat /tmp/gh_resp.txt
+
+          if [[ "${HTTP_CODE}" -lt 200 || "${HTTP_CODE}" -ge 300 ]]; then
+            echo "❌ 触发 common 仓库 workflow 失败，http status: ${HTTP_CODE}"
+            exit 1
+          fi
+          echo "✅ 成功触发 common 仓库 ${TARGET_WORKFLOW}，版本 ${NEW_VERSION}"
