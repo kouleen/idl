@@ -7,14 +7,14 @@ include "../common/constant.thrift"
 
 struct SystemRoleUserRequest {
     1: optional i64 roleId                      // 角色ID
-    2: optional list<i64> userIdList            // 用户ID
-    3: optional string username                 // 用户名称
-    4: optional string nickname                 // 用户昵称
-    5: optional string phone                    // 手机号
-    6: optional string remark                   // 备注
-    7: optional base.PageRequest PageRequest
+    2: list<i64> userIdList            // 用户ID
+    3: string username                 // 用户名称
+    4: string nickname                 // 用户昵称
+    5: string phone                    // 手机号
+    6: string remark                   // 备注
+    7: base.PageRequest PageRequest
 
-    255: optional base.BaseRequest BaseRequest
+    255: base.BaseRequest BaseRequest
 }
 
 struct SystemRoleUserResponse {
@@ -34,5 +34,5 @@ struct SystemRoleUserResponse {
 
 struct SystemRoleUserPageResponse {
     1: required i64 total,
-    2: required list<SystemRoleUserResponse> records
+    2: list<SystemRoleUserResponse> records
 }

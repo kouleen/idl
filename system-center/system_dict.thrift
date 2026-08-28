@@ -6,13 +6,13 @@ include "../common/base.thrift"
 include "../common/constant.thrift"
 
 struct SystemDictHeaderRequest {
-    1: optional string dictName                     // 字典名称
-    2: optional string dictType                     // 字典类型
+    1: string dictName                     // 字典名称
+    2: string dictType                     // 字典类型
     3: optional constant.BaseStatus status          // 状态
-    4: optional string remark                       // 备注
-    5: optional base.PageRequest PageRequest
+    4: string remark                       // 备注
+    5: base.PageRequest PageRequest
 
-    255: optional base.BaseRequest BaseRequest
+    255: base.BaseRequest BaseRequest
 }
 
 struct SystemDictHeaderResponse {
@@ -26,20 +26,20 @@ struct SystemDictHeaderResponse {
 
 struct SystemDictHeaderPageResponse {
     1: required i64 total,
-    2: required list<SystemDictHeaderResponse> records
+    2: list<SystemDictHeaderResponse> records
 }
 
 struct SystemDictLineRequest {
-    1: optional string dictCode                     // 字典编码
-    2: optional string dictValue                    // 字典值
+    1: string dictCode                     // 字典编码
+    2: string dictValue                    // 字典值
     3: optional i32 dictSort                        // 健值排序
-    4: optional string dictType                     // 字典类型
-    5: optional string listClass                    // 表格回显样式
+    4: string dictType                     // 字典类型
+    5: string listClass                    // 表格回显样式
     6: optional constant.BaseStatus status          // 状态
-    7: optional string remark                       // 备注
-    8: optional base.PageRequest PageRequest
+    7: string remark                       // 备注
+    8: base.PageRequest PageRequest
 
-    255: optional base.BaseRequest BaseRequest
+    255: base.BaseRequest BaseRequest
 }
 
 struct SystemDictLineResponse {
@@ -56,6 +56,6 @@ struct SystemDictLineResponse {
 
 struct SystemDictLinePageResponse {
     1: required i64 total,
-    2: required list<SystemDictLineResponse> records
+    2: list<SystemDictLineResponse> records
 }
 

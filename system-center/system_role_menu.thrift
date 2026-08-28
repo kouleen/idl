@@ -7,14 +7,14 @@ include "../common/constant.thrift"
 
 struct SystemRoleMenuRequest {
     1: optional i64 roleId                      // 角色ID
-    2: optional string roleName                 // 角色名称
+    2: string roleName                 // 角色名称
     3: optional i32 roleSort                    // 显示顺序
-    4: optional list<i64> menuIds               // 菜单ID
+    4: list<i64> menuIds               // 菜单ID
     5: optional constant.BaseStatus status      // 状态
-    6: optional string remark                   // 备注
-    7: optional base.PageRequest PageRequest
+    6: string remark                   // 备注
+    7: base.PageRequest PageRequest
 
-    255: optional base.BaseRequest BaseRequest
+    255: base.BaseRequest BaseRequest
 }
 
 struct SystemRoleMenuResponse {
@@ -27,5 +27,5 @@ struct SystemRoleMenuResponse {
 
 struct SystemRoleMenuPageResponse {
     1: required i64 total,
-    2: required list<SystemRoleMenuResponse> records
+    2: list<SystemRoleMenuResponse> records
 }

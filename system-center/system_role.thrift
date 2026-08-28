@@ -8,13 +8,13 @@ include "../common/constant.thrift"
 
 
 struct SystemRoleRequest {
-    1: optional string roleName               // 角色名称
+    1:  string roleName               // 角色名称
     2: optional i32 roleSort                  // 显示顺序
     3: optional constant.BaseStatus status    // 状态
-    4: optional list<i64> idList
-    5: optional base.PageRequest PageRequest
+    4: list<i64> idList
+    5: base.PageRequest PageRequest
 
-    255: optional base.BaseRequest BaseRequest
+    255: base.BaseRequest BaseRequest
 }
 
 struct SystemRoleResponse {
@@ -27,5 +27,5 @@ struct SystemRoleResponse {
 
 struct SystemRolePageResponse {
     1: required i64 total,
-    2: required list<SystemRoleResponse> records
+    2: list<SystemRoleResponse> records
 }
