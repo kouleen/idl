@@ -37,7 +37,7 @@ jobs:
 
           find . -type f -name "*.thrift" | while read -r file; do
             echo "processing $file"
-            kitex -module github.com/kouleen/idl -output-dir ./kitex_gen "$file"
+            kitex -module github.com/kouleen/idl -gen-path ./kitex_gen "$file"
           done
 
       - name: Commit SDK to gen-sdk branch
