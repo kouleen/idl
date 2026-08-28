@@ -2,26 +2,32 @@ namespace java io.github.kouleen.thrift.system
 namespace go system
 namespace py system
 
-include "../common/base.thrift"
-include "../common/constant.thrift"
-
 struct SystemDictHeaderRequest {
-    1: string dictName                     // 字典名称
-    2: string dictType                     // 字典类型
-    3: optional constant.BaseStatus status          // 状态
-    4: string remark                       // 备注
-    5: base.PageRequest PageRequest
-
-    255: base.BaseRequest BaseRequest
+    1: optional i64 current = 1
+    2: optional i64 size = 10
+    3: optional i64 id                              // ID
+    4: string dictName                              // 字典名称
+    5: string dictType                              // 字典类型
+    6: optional i8 status                           // 状态  1:启用 0:禁用
+    7: string remark                                // 备注
+    8: optional i8 isDelete                         // 删除标识 1：删除 0：未删除
+    9: optional i64 createdBy                       // 创建人
+    10: optional i64 updatedBy                      // 修改人
+    11: optional i64 createTime                     // 创建时间
+    12: optional i64 updateTime                     // 修改时间
 }
 
 struct SystemDictHeaderResponse {
-    1: string dictName                              // 字典名称
-    2: string dictType                              // 字典类型
-    3: constant.BaseStatus status                   // 状态
-    4: string remark                                // 备注
-
-    255: base.BaseResponse BaseResponse
+    1: i64 id                                       // ID
+    2: string dictName                              // 字典名称
+    3: string dictType                              // 字典类型
+    4: i8 status                                    // 状态  1:启用 0:禁用
+    5: string remark                                // 备注
+    6: i8 isDelete                                  // 删除标识 1：删除 0：未删除
+    7: i64 createdBy                                // 创建人
+    8: i64 updatedBy                                // 修改人
+    9: i64 createTime                               // 创建时间
+    10: i64 updateTime                              // 修改时间
 }
 
 struct SystemDictHeaderPageResponse {
@@ -30,28 +36,36 @@ struct SystemDictHeaderPageResponse {
 }
 
 struct SystemDictLineRequest {
-    1: string dictCode                     // 字典编码
-    2: string dictValue                    // 字典值
-    3: optional i32 dictSort                        // 健值排序
-    4: string dictType                     // 字典类型
-    5: string listClass                    // 表格回显样式
-    6: optional constant.BaseStatus status          // 状态
-    7: string remark                       // 备注
-    8: base.PageRequest PageRequest
-
-    255: base.BaseRequest BaseRequest
+    1: optional i64 current = 1
+    2: optional i64 size = 10
+    3: string dictCode                              // 字典编码
+    4: string dictValue                             // 字典值
+    5: optional i32 dictSort                        // 健值排序
+    6: string dictType                              // 字典类型
+    7: string listClass                             // 表格回显样式
+    8: optional i8 status                           // 状态   1:启用 0:禁用
+    9: string remark                                // 备注
+    10: optional i8 isDelete                        // 删除标识 1：删除 0：未删除
+    11: optional i64 createdBy                      // 创建人
+    12: optional i64 updatedBy                      // 修改人
+    13: optional i64 createTime                     // 创建时间
+    14: optional i64 updateTime                     // 修改时间
 }
 
 struct SystemDictLineResponse {
-    1: string dictCode                              // 字典编码
-    2: string dictValue                             // 字典值
-    3: i32 dictSort                                 // 健值排序
-    4: string dictType                              // 字典类型
-    5: string listClass                             // 表格回显样式
-    6: constant.BaseStatus status                   // 状态
-    7: string remark                                // 备注
-
-    255: base.BaseResponse BaseResponse
+    1: i64 id                                       // ID
+    2: string dictCode                              // 字典编码
+    3: string dictValue                             // 字典值
+    4: i32 dictSort                                 // 健值排序
+    5: string dictType                              // 字典类型
+    6: string listClass                             // 表格回显样式
+    7: i8 status                                    // 状态   1:启用 0:禁用
+    8: string remark                                // 备注
+    9: i8 isDelete                                  // 删除标识 1：删除 0：未删除
+    10: i64 createdBy                               // 创建人
+    11: i64 updatedBy                               // 修改人
+    12: i64 createTime                              // 创建时间
+    13: i64 updateTime                              // 修改时间
 }
 
 struct SystemDictLinePageResponse {
