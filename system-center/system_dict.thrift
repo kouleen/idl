@@ -38,14 +38,14 @@ struct SystemDictHeaderPageResponse {
 struct SystemDictLineRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
-    3: i64 id                                       // ID
+    3: optional i64 id                              // ID
     4: string dictCode                              // 字典编码
     5: string dictValue                             // 字典值
     6: optional i32 dictSort                        // 健值排序
     7: string dictType                              // 字典类型
     8: string listClass                             // 表格回显样式
     9: optional i8 status                           // 状态   1:启用 0:禁用
-    10: string remark                                // 备注
+    10: string remark                               // 备注
     11: optional i8 isDelete                        // 删除标识 1：删除 0：未删除
     12: optional i64 createdBy                      // 创建人
     13: optional i64 updatedBy                      // 修改人
