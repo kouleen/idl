@@ -1,7 +1,0 @@
-white_path:
-  - /api/webhook/update
-  - /api/user/login
-  - /api/user/sendSmsMessage
-  - /api/user/captcha
-  - /api/user/register
-  - /api/user/resetPwd
