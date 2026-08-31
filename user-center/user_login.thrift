@@ -7,7 +7,7 @@ struct LoginRequest {
     2: string phone                     // 手机号
     3: string code                      // 验证码
     4: string password                  // 密码
-    5: optional LoginType loginType     // 登录方式
+    5: optional i8 loginType            // 登录方式
     6: string uuid                      // 验证码唯一标识
     7: bool remember                    // 记住
 }
