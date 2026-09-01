@@ -50,5 +50,50 @@ servers:
       - path: /api/system/querySystemDictHeaderPage
         method: QuerySystemDictHeaderPage
         http_method: GET
+      - path: /api/system/querySystemDictHeaderList
+        method: QuerySystemDictHeaderList
+        http_method: GET
+      - path: /api/system/createSystemDictHeader
+        method: CreateSystemDictHeader
+        http_method: POST
+      - path: /api/system/updateSystemDictHeader
+        method: UpdateSystemDictHeader
+        http_method: POST
+      - path: /api/system/deleteSystemDictHeader
+        method: DeleteSystemDictHeader
+        http_method: POST
+      - path: /api/system/querySystemDictLinePage
+        method: QuerySystemDictLinePage
+        http_method: GET
+      - path: /api/system/querySystemDictLineList
+        method: QuerySystemDictLineList
+        http_method: GET
+      - path: /api/system/createSystemDictLine
+        method: CreateSystemDictLine
+        http_method: POST
+      - path: /api/system/updateSystemDictLine
+        method: UpdateSystemDictLine
+        http_method: POST
+      - path: /api/system/deleteSystemDictLine
+        method: DeleteSystemDictLine
+        http_method: POST
+      - path: /api/system/querySystemInterfacePage
+        method: QuerySystemInterfacePage
+        http_method: GET
+      - path: /api/system/querySystemInterfaceList
+        method: QuerySystemInterfaceList
+        http_method: GET
+      - path: /api/system/cleanCacheSystemInterface
+        method: CleanCacheSystemInterface
+        http_method: GET
+      - path: /api/system/saveSystemInterface
+        method: SaveSystemInterface
+        http_method: POST
+      - path: /api/system/updateSystemInterface
+        method: UpdateSystemInterface
+        http_method: POST
+      - path: /api/system/deleteSystemInterface
+        method: DeleteSystemInterface
+        http_method: POST
 
 
