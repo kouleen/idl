@@ -15,7 +15,7 @@ service UserService {
     // 用户登录
     user_login.LoginResponse Login(1: user_login.LoginRequest req)
     // 用户注册
-    bool Register(1: user_register.RegisterRequest req)
+    user_login.LoginResponse Register(1: user_register.RegisterRequest req)
     // 重置密码
     bool ResetPwd(1: user_login.LoginRequest req)
     // 退出登录
