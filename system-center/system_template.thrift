@@ -24,9 +24,9 @@ struct SystemTemplateResponse {
     3: string templateName          // 模板名称
     4: string templateType          // 模板类型
     5: string templateContent       // 模板内容
-    6: i8 status                    // 状态
+    6: optional i8 status           // 状态
     7: string remark                // 备注
-    8: i8 isDelete                  // 删除标识 1：删除 0：未删除
+    8: optional i8 isDelete         // 删除标识 1：删除 0：未删除
     9: i64 createdBy                // 创建人
     10: i64 updatedBy               // 修改人
     11: i64 createTime              // 创建时间

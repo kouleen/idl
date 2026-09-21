@@ -12,7 +12,7 @@ struct SystemRoleUserRequest {
     7: string nickname                          // 用户昵称
     8: string phone                             // 手机号
     9: string remark                            // 备注
-    10: optional i8 isDelete                     // 删除标识 1：删除 0：未删除
+    10: optional i8 isDelete                    // 删除标识 1：删除 0：未删除
     11: optional i64 createdBy                  // 创建人
     12: optional i64 updatedBy                  // 修改人
     13: optional i64 createTime                 // 创建时间
@@ -25,13 +25,13 @@ struct SystemRoleUserResponse {
     3: string roleName                  // 角色名称
     4: i64 userId                       // 用户ID
     5: string username                  // 用户名
-    6: string nickname                  //用户昵称
-    7: i8 gender                        // 性别 1:男 2:女
+    6: string nickname                  // 用户昵称
+    7: optional i8 gender               // 性别 1:男 2:女
     8: string avatar                    // 头像
     9: string phone                     // 手机号
-    10: i8 status                       // 状态
+    10: optional i8 status              // 状态
     11: string remark                   // 备注
-    12: i8 isDelete                     // 删除标识 1：删除 0：未删除
+    12: optional i8 isDelete            // 删除标识 1：删除 0：未删除
     13: i64 createdBy                   // 创建人
     14: i64 updatedBy                   // 修改人
     15: i64 createTime                  // 创建时间

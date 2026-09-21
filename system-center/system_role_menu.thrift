@@ -24,7 +24,7 @@ struct SystemRoleMenuResponse {
     2: i64 roleId               // 角色ID
     3: i64 menuId               // 菜单ID
     4: string remark            // 备注
-    5: i8 isDelete              // 删除标识 1：删除 0：未删除
+    5: optional i8 isDelete     // 删除标识 1：删除 0：未删除
     6: i64 createdBy            // 创建人
     7: i64 updatedBy            // 修改人
     8: i64 createTime           // 创建时间

@@ -20,9 +20,9 @@ struct SystemRoleRequest {
 struct SystemRoleResponse {
     1: i64 id                           // ID
     2: string roleName                  // 角色名称
-    3: i32 roleSort                     // 显示顺序
-    4: i8 status                        // 状态
-    5: i8 isDelete                      // 删除标识 1：删除 0：未删除
+    3: optional i32 roleSort            // 显示顺序
+    4: optional i8 status               // 状态
+    5: optional i8 isDelete             // 删除标识 1：删除 0：未删除
     6: i64 createdBy                    // 创建人
     7: i64 updatedBy                    // 修改人
     8: i64 createTime                   // 创建时间

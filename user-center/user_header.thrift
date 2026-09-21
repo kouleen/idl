@@ -25,11 +25,11 @@ struct UserHeaderResponse {
     2: string username                      // 用户名
     3: string password                      // 用户密码
     4: string nickname                      // 用户昵称
-    5: i8 gender                            // 性别 1：男 2：女
+    5: optional i8 gender                   // 性别 1：男 2：女
     6: string avatar                        // 头像
     7: string phone                         // 手机号
-    8: i8 status                            // 状态
-    9: i8 isDelete                          // 删除标识 1：删除 0：未删除
+    8: optional i8 status                   // 状态
+    9: optional i8 isDelete                 // 删除标识 1：删除 0：未删除
     10: i64 createdBy                       // 创建人
     11: i64 updatedBy                       // 修改人
     12: i64 createTime                      // 创建时间

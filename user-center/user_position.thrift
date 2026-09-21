@@ -32,7 +32,7 @@ struct UserPositionResponse {
     9: string fullAddress                       // 完整地址
     10: string country                          // 国家
     11: string countryCode                      // 国家代码
-    12: i8 isDelete                             // 删除标识 1：删除 0：未删除
+    12: optional i8 isDelete                    // 删除标识 1：删除 0：未删除
     13: i64 createdBy                           // 创建人
     14: i64 updatedBy                           // 修改人
     15: i64 createTime                          // 创建时间

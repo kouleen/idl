@@ -25,13 +25,13 @@ struct SystemInterfaceResponse {
     1: i64 id                           // ID
     2: string requestPath               // 请求路径
     3: string interfaceName             // 接口全类名
-    4: i8 methodType                    // 方法类型
+    4: optional i8 methodType           // 方法类型
     5: string methodName                // 方法名称
     6: string paramTypes                // 方法参数类型
     7: string version                   // 接口版本
-    8: i8 status                        // 状态
+    8: optional i8 status               // 状态
     9: string remark                    // 备注
-    10: i8 isDelete                     // 删除标识 1：删除 0：未删除
+    10: optional i8 isDelete            // 删除标识 1：删除 0：未删除
     11: i64 createdBy                   // 创建人
     12: i64 updatedBy                   // 修改人
     13: i64 createTime                  // 创建时间

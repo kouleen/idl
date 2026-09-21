@@ -21,9 +21,9 @@ struct SystemDictHeaderResponse {
     1: i64 id                                       // ID
     2: string dictName                              // 字典名称
     3: string dictType                              // 字典类型
-    4: i8 status                                    // 状态  1:启用 0:禁用
+    4: optional i8 status                           // 状态  1:启用 0:禁用
     5: string remark                                // 备注
-    6: i8 isDelete                                  // 删除标识 1：删除 0：未删除
+    6: optional i8 isDelete                         // 删除标识 1：删除 0：未删除
     7: i64 createdBy                                // 创建人
     8: i64 updatedBy                                // 修改人
     9: i64 createTime                               // 创建时间
@@ -57,12 +57,12 @@ struct SystemDictLineResponse {
     1: i64 id                                       // ID
     2: string dictCode                              // 字典编码
     3: string dictValue                             // 字典值
-    4: i32 dictSort                                 // 健值排序
+    4: optional i32 dictSort                        // 健值排序
     5: string dictType                              // 字典类型
     6: string listClass                             // 表格回显样式
-    7: i8 status                                    // 状态   1:启用 0:禁用
+    7: optional i8 status                           // 状态   1:启用 0:禁用
     8: string remark                                // 备注
-    9: i8 isDelete                                  // 删除标识 1：删除 0：未删除
+    9: optional i8 isDelete                         // 删除标识 1：删除 0：未删除
     10: i64 createdBy                               // 创建人
     11: i64 updatedBy                               // 修改人
     12: i64 createTime                              // 创建时间
