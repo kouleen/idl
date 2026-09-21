@@ -71,6 +71,9 @@ servers:
       - path: /api/system/querySystemDictLineList
         method: QuerySystemDictLineList
         http_method: GET
+      - path: /api/system/querySystemDictLine
+        method: QuerySystemDictLine
+        http_method: GET
       - path: /api/system/createSystemDictLine
         method: CreateSystemDictLine
         http_method: POST
@@ -157,6 +160,9 @@ servers:
         http_method: POST
       - path: /api/system/querySystemTemplatePage
         method: QuerySystemTemplatePage
+        http_method: GET
+      - path: /api/system/querySystemTemplate
+        method: QuerySystemTemplate
         http_method: GET
       - path: /api/system/saveSystemTemplate
         method: SaveSystemTemplate
