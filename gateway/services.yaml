@@ -53,6 +53,9 @@ servers:
       - path: /api/system/querySystemDictHeaderList
         method: QuerySystemDictHeaderList
         http_method: GET
+      - path: /api/system/querySystemDictHeader
+        method: QuerySystemDictHeader
+        http_method: GET
       - path: /api/system/createSystemDictHeader
         method: CreateSystemDictHeader
         http_method: POST

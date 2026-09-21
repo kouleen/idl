@@ -6,4 +6,4 @@ white_path:
   - /api/user/register
   - /api/user/resetPwd
   - /api/system/querySystemDictLineList
-  - /api/system/querySystemInterface
+  - /api/system/querySystemInterfaceList
