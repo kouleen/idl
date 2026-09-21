@@ -16,7 +16,7 @@ service SystemService {
     system_dict.SystemDictHeaderPageResponse QuerySystemDictHeaderPage(1: system_dict.SystemDictHeaderRequest systemDictHeaderRequest)
     // 查询字典信息
     list<system_dict.SystemDictHeaderResponse> QuerySystemDictHeaderList(1: system_dict.SystemDictHeaderRequest systemDictHeaderRequest)
-    system_dict.SystemDictHeaderResponse QuerySystemDictHeader(1: i64 id)
+    system_dict.SystemDictHeaderResponse QuerySystemDictHeader(1: system_dict.SystemDictHeaderRequest systemDictHeaderRequest)
     // 创建字典信息
     bool CreateSystemDictHeader(1: system_dict.SystemDictHeaderRequest systemDictHeaderRequest)
     // 修改字典信息
@@ -27,7 +27,7 @@ service SystemService {
     system_dict.SystemDictLinePageResponse QuerySystemDictLinePage(1: system_dict.SystemDictLineRequest systemDictLineRequest)
     // 查询字典明细信息
     list<system_dict.SystemDictLineResponse> QuerySystemDictLineList(1: system_dict.SystemDictLineRequest systemDictLineRequest)
-    system_dict.SystemDictLineResponse QuerySystemDictLine(1: i64 id)
+    system_dict.SystemDictLineResponse QuerySystemDictLine(1: system_dict.SystemDictLineRequest systemDictLineRequest)
     // 创建字典明细信息
     bool CreateSystemDictLine(1: system_dict.SystemDictLineRequest systemDictLineRequest)
     // 修改字典明细信息
@@ -41,7 +41,7 @@ service SystemService {
     // 查询接口地址
     list<system_interface.SystemInterfaceResponse> QuerySystemInterfaceList(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 查询接口地址
-    system_interface.SystemInterfaceResponse QuerySystemInterface(1: i64 id)
+    system_interface.SystemInterfaceResponse QuerySystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 创建接口
     bool saveSystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 修改接口
@@ -57,7 +57,7 @@ service SystemService {
     // 查询菜单信息
     list<system_menu.SystemMenuResponse> QuerySystemMenuList(1: system_menu.SystemMenuRequest systemMenuRequest)
     // 查询菜单信息
-    system_menu.SystemMenuResponse QuerySystemMenu(1: i64 id)
+    system_menu.SystemMenuResponse QuerySystemMenu(1: system_menu.SystemMenuRequest systemMenuRequest)
     // 创建菜单信息
     bool SaveSystemMenu(1: system_menu.SystemMenuRequest systemMenuRequest)
     // 修改菜单信息
@@ -69,7 +69,7 @@ service SystemService {
     // 分页查询角色信息
     system_role.SystemRolePageResponse QuerySystemRolePage(1: system_role.SystemRoleRequest systemRoleRequest)
     // 查询角色信息
-    system_role.SystemRoleResponse QuerySystemRole(1: i64 id)
+    system_role.SystemRoleResponse QuerySystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
     // 创建角色信息
     bool SaveSystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
     // 修改角色信息
@@ -97,7 +97,7 @@ service SystemService {
     // 分页查询系统模板
     system_template.SystemTemplatePageResponse querySystemTemplatePage(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 查询系统模板
-    system_template.SystemTemplateResponse querySystemTemplate(1: i64 id)
+    system_template.SystemTemplateResponse querySystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 创建系统模板
     bool saveSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 修改系统模板
