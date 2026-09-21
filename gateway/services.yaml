@@ -86,6 +86,9 @@ servers:
       - path: /api/system/cleanCacheSystemInterface
         method: CleanCacheSystemInterface
         http_method: GET
+      - path: /api/system/querySystemInterface
+        method: QuerySystemInterface
+        http_method: GET
       - path: /api/system/saveSystemInterface
         method: SaveSystemInterface
         http_method: POST
@@ -95,5 +98,70 @@ servers:
       - path: /api/system/deleteSystemInterface
         method: DeleteSystemInterface
         http_method: POST
-
+      - path: /api/system/querySystemMenuTree
+        method: QuerySystemMenuTree
+        http_method: GET
+      - path: /api/system/querySystemMenuList
+        method: QuerySystemMenuList
+        http_method: GET
+      - path: /api/system/querySystemMenu
+        method: QuerySystemMenu
+        http_method: GET
+      - path: /api/system/saveSystemMenu
+        method: SaveSystemMenu
+        http_method: POST
+      - path: /api/system/updateSystemMenu
+        method: UpdateSystemMenu
+        http_method: POST
+      - path: /api/system/deleteSystemMenu
+        method: DeleteSystemMenu
+        http_method: POST
+      - path: /api/system/querySystemRolePage
+        method: QuerySystemRolePage
+        http_method: GET
+      - path: /api/system/querySystemRolePage
+        method: QuerySystemRolePage
+        http_method: GET
+      - path: /api/system/querySystemRole
+        method: QuerySystemRole
+        http_method: GET
+      - path: /api/system/saveSystemRole
+        method: SaveSystemRole
+        http_method: POST
+      - path: /api/system/updateSystemRole
+        method: UpdateSystemRole
+        http_method: POST
+      - path: /api/system/deleteSystemRole
+        method: DeleteSystemRole
+        http_method: POST
+      - path: /api/system/querySystemRoleUserPage
+        method: QuerySystemRoleUserPage
+        http_method: GET
+      - path: /api/system/querySystemRoleUserList
+        method: QuerySystemRoleUserList
+        http_method: GET
+      - path: /api/system/saveSystemRoleUser
+        method: SaveSystemRoleUser
+        http_method: POST
+      - path: /api/system/cancelSystemRoleUser
+        method: CancelSystemRoleUser
+        http_method: POST
+      - path: /api/system/saveSystemRoleMenu
+        method: SaveSystemRoleMenu
+        http_method: POST
+      - path: /api/system/updateSystemRoleMenu
+        method: UpdateSystemRoleMenu
+        http_method: POST
+      - path: /api/system/querySystemTemplatePage
+        method: QuerySystemTemplatePage
+        http_method: GET
+      - path: /api/system/saveSystemTemplate
+        method: SaveSystemTemplate
+        http_method: POST
+      - path: /api/system/updateSystemTemplate
+        method: UpdateSystemTemplate
+        http_method: POST
+      - path: /api/system/deleteSystemTemplate
+        method: DeleteSystemTemplate
+        http_method: POST
 

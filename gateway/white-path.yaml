@@ -5,3 +5,5 @@ white_path:
   - /api/user/captcha
   - /api/user/register
   - /api/user/resetPwd
+  - /api/system/querySystemDictLineList
+  - /api/system/querySystemInterface

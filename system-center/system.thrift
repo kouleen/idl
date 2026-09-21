@@ -38,6 +38,8 @@ service SystemService {
     system_interface.SystemInterfacePageResponse QuerySystemInterfacePage(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 查询接口地址
     list<system_interface.SystemInterfaceResponse> QuerySystemInterfaceList(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
+    // 查询接口地址
+    system_interface.SystemInterfaceResponse QuerySystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 创建接口
     bool saveSystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 修改接口
@@ -48,14 +50,10 @@ service SystemService {
     bool CleanCacheSystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     /******************************************************接口*************************************************************/
     /******************************************************菜单*************************************************************/
-    // 分页查询菜单信息
-    system_menu.SystemMenuPageResponse QuerySystemMenuPage(1: system_menu.SystemMenuRequest systemMenuRequest)
+    // 查询菜单信息(树)
+    list<system_menu.SystemMenuResponse> QuerySystemMenuTree(1: system_menu.SystemMenuRequest systemMenuRequest)
     // 查询菜单信息
     list<system_menu.SystemMenuResponse> QuerySystemMenuList(1: system_menu.SystemMenuRequest systemMenuRequest)
-    // 查询所有菜单信息(树)
-    list<system_menu.SystemMenuResponse> QuerySystemMenuAllTree(1: system_menu.SystemMenuRequest systemMenuRequest)
-    // 查询菜单信息
-    list<system_menu.SystemMenuResponse> QuerySystemMenuTree(1: system_menu.SystemMenuRequest systemMenuRequest)
     // 查询菜单信息
     system_menu.SystemMenuResponse QuerySystemMenu(1: system_menu.SystemMenuRequest systemMenuRequest)
     // 创建菜单信息
