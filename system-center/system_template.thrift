@@ -16,6 +16,7 @@ struct SystemTemplateRequest {
     11: optional i64 createdBy      // 创建人
     12: optional i64 updatedBy      // 修改人
     13: optional i64 createTime     // 创建时间
+    14: optional list<i64> idList
 }
 
 struct SystemTemplateResponse {

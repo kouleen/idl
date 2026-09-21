@@ -14,7 +14,7 @@ struct SystemRoleRequest {
     9: optional i64 updatedBy                       // 修改人
     10: optional i64 createTime                     // 创建时间
     11: optional i64 updateTime                     // 修改时间
-    12: list<i64> idList
+    12: optional list<i64> idList
 }
 
 struct SystemRoleResponse {

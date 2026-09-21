@@ -15,6 +15,7 @@ struct SystemDictHeaderRequest {
     10: optional i64 updatedBy                      // 修改人
     11: optional i64 createTime                     // 创建时间
     12: optional i64 updateTime                     // 修改时间
+    13: optional list<i64> idList
 }
 
 struct SystemDictHeaderResponse {
@@ -51,6 +52,7 @@ struct SystemDictLineRequest {
     13: optional i64 updatedBy                      // 修改人
     14: optional i64 createTime                     // 创建时间
     15: optional i64 updateTime                     // 修改时间
+    16: optional list<i64> idList
 }
 
 struct SystemDictLineResponse {
