@@ -2,6 +2,8 @@ namespace java io.github.kouleen.thrift.system
 namespace go system
 namespace py system
 
+include "../common/base_query.thrift"
+
 struct SystemLoginLogRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
@@ -19,6 +21,8 @@ struct SystemLoginLogRequest {
     14: optional i64 updatedBy
     15: optional i64 createTime
     16: optional i64 updateTime
+
+    255: optional base_query.BaseQueryRequest params
 }
 
 struct SystemLoginLogResponse {

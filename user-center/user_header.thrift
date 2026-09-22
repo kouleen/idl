@@ -2,10 +2,12 @@ namespace java io.github.kouleen.thrift.user
 namespace go user
 namespace py user
 
+include "../common/base_query.thrift"
+
 struct UserHeaderRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
-    3: list<i64> userIdList
+    3: optional i64 id
     4: string username                      // 用户名
     5: string password                      // 用户密码
     6: string nickname                      // 用户昵称
@@ -18,6 +20,9 @@ struct UserHeaderRequest {
     13: optional i64 updatedBy              // 修改人
     14: optional i64 createTime             // 创建时间
     15: optional i64 updateTime             // 修改时间
+    16: list<i64> userIdList
+
+    255: optional base_query.BaseQueryRequest params
 }
 
 struct UserHeaderResponse {

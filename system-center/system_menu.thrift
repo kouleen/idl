@@ -2,6 +2,8 @@ namespace java io.github.kouleen.thrift.system
 namespace go system
 namespace py system
 
+include "../common/base_query.thrift"
+
 struct SystemMenuRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
@@ -26,6 +28,8 @@ struct SystemMenuRequest {
     21: optional i64 updatedBy                      // 修改人
     22: optional i64 createTime                     // 创建时间
     23: optional i64 updateTime                     // 修改时间
+
+    255: optional base_query.BaseQueryRequest params
 }
 
 struct SystemMenuResponse {

@@ -2,6 +2,8 @@ namespace java io.github.kouleen.thrift.system
 namespace go system
 namespace py system
 
+include "../common/base_query.thrift"
+
 struct SystemEducationRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
@@ -14,6 +16,8 @@ struct SystemEducationRequest {
     9: optional i64 updatedBy
     10: optional i64 createTime
     11: optional i64 updateTime
+
+    255: optional base_query.BaseQueryRequest params
 }
 
 struct SystemEducationResponse {

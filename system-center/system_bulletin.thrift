@@ -2,6 +2,8 @@ namespace java io.github.kouleen.thrift.system
 namespace go system
 namespace py system
 
+include "../common/base_query.thrift"
+
 struct SystemBulletinRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
@@ -16,6 +18,8 @@ struct SystemBulletinRequest {
     11: optional i64 createTime
     12: optional i64 updateTime
     13: optional list<i64> idList
+
+    255: optional base_query.BaseQueryRequest params
 }
 
 struct SystemBulletinResponse {

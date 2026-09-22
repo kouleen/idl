@@ -2,6 +2,8 @@ namespace java io.github.kouleen.thrift.system
 namespace go system
 namespace py system
 
+include "../common/base_query.thrift"
+
 struct SystemDictHeaderRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
@@ -17,13 +19,9 @@ struct SystemDictHeaderRequest {
     12: optional i64 updateTime                     // 修改时间
     13: optional list<i64> idList
 
-    255: optional BaseQueryRequest params
+    255: optional base_query.BaseQueryRequest params
 }
 
-struct BaseQueryRequest {
-    1: string beginTime
-    2: string endTime
-}
 
 struct SystemDictHeaderResponse {
     1: i64 id                                       // ID

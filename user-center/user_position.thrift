@@ -1,4 +1,8 @@
-namespace java user
+namespace java io.github.kouleen.thrift.user
+namespace go user
+namespace py user
+
+include "../common/base_query.thrift"
 
 struct UserPositionRequest {
     1: optional i64 current = 1
@@ -20,6 +24,8 @@ struct UserPositionRequest {
     17: optional i64 createTime                 // 创建时间
     18: optional i64 updateTime                 // 修改时间
     19: list<i64> idList
+
+    255: optional base_query.BaseQueryRequest params
 }
 
 struct UserPositionResponse {
