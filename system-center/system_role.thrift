@@ -17,6 +17,7 @@ struct SystemRoleRequest {
     10: optional i64 createTime                     // 创建时间
     11: optional i64 updateTime                     // 修改时间
     12: optional list<i64> idList
+    13: list<i64> menuIds
 
     255: optional base_query.BaseQueryRequest params
 }
@@ -31,6 +32,7 @@ struct SystemRoleResponse {
     7: i64 updatedBy                    // 修改人
     8: i64 createTime                   // 创建时间
     9: i64 updateTime                   // 修改时间
+    10: list<i64> menuIds
 }
 
 struct SystemRolePageResponse {
