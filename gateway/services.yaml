@@ -173,4 +173,34 @@ servers:
       - path: /api/system/deleteSystemTemplate
         method: DeleteSystemTemplate
         http_method: POST
+      - path: /api/system/querySystemBulletinPage
+        method: QuerySystemBulletinPage
+        http_method: GET
+      - path: /api/system/querySystemBulletin
+        method: QuerySystemBulletin
+        http_method: GET
+      - path: /api/system/saveSystemBulletin
+        method: SaveSystemBulletin
+        http_method: POST
+      - path: /api/system/updateSystemBulletin
+        method: UpdateSystemBulletin
+        http_method: POST
+      - path: /api/system/deleteSystemBulletin
+        method: DeleteSystemBulletin
+        http_method: POST
+      - path: /api/system/querySystemEducationPage
+        method: QuerySystemEducationPage
+        http_method: GET
+      - path: /api/system/querySystemEducation
+        method: QuerySystemEducation
+        http_method: GET
+      - path: /api/system/saveSystemEducation
+        method: SaveSystemEducation
+        http_method: POST
+      - path: /api/system/updateSystemEducation
+        method: UpdateSystemEducation
+        http_method: POST
+      - path: /api/system/deleteSystemEducation
+        method: DeleteSystemEducation
+        http_method: POST
 
