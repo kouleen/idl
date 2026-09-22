@@ -97,38 +97,38 @@ service SystemService {
     /******************************************************角色用户**********************************************************/
     /******************************************************模板*************************************************************/
     // 分页查询系统模板
-    system_template.SystemTemplatePageResponse querySystemTemplatePage(1: system_template.SystemTemplateRequest systemTemplateRequest)
+    system_template.SystemTemplatePageResponse QuerySystemTemplatePage(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 查询系统模板
-    system_template.SystemTemplateResponse querySystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
+    system_template.SystemTemplateResponse QuerySystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 创建系统模板
-    bool saveSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
+    bool SaveSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 修改系统模板
-    bool updateSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
+    bool UpdateSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     // 删除系统模板
-    bool deleteSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
+    bool DeleteSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     /******************************************************模板*************************************************************/
     /******************************************************公告*************************************************************/
     // 分页查询系统公告
-    system_bulletin.SystemBulletinPageResponse querySystemBulletinPage(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    system_bulletin.SystemBulletinPageResponse QuerySystemBulletinPage(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
     // 查询系统公告
-    system_bulletin.SystemBulletinResponse querySystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    system_bulletin.SystemBulletinResponse QuerySystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
     // 创建系统公告
-    bool saveSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    bool SaveSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
     // 修改系统公告
-    bool updateSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    bool UpdateSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
     // 删除系统公告
-    bool deleteSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    bool DeleteSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
     /******************************************************公告*************************************************************/
     /******************************************************文案*************************************************************/
     // 分页查询系统文案
-    system_education.SystemEducationPageResponse querySystemEducationPage(1: system_education.SystemEducationRequest systemEducationRequest)
+    system_education.SystemEducationPageResponse QuerySystemEducationPage(1: system_education.SystemEducationRequest systemEducationRequest)
     // 查询系统文案
-    system_education.SystemEducationResponse querySystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    system_education.SystemEducationResponse QuerySystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
     // 创建系统文案
-    bool saveSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    bool SaveSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
     // 修改系统文案
-    bool updateSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    bool UpdateSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
     // 删除系统文案
-    bool deleteSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    bool DeleteSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
     /******************************************************文案*************************************************************/
 }
