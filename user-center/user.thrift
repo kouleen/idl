@@ -29,6 +29,9 @@ service UserService {
 
     // 分页查询用户位置信息
     user_position.UserPositionPageResponse QueryUserPositionPage(1: user_position.UserPositionRequest req)
+    // 查询用户位置信息
+    list<user_position.UserPositionResponse> QueryUserPositionList(1: user_position.UserPositionRequest req)
+    user_position.UserPositionResponse QueryUserPosition(1: user_position.UserPositionRequest req)
     // 创建用户位置
     bool SaveUserPosition(1: user_position.UserPositionRequest req)
     // 修改用户位置

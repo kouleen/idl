@@ -9,6 +9,8 @@ include "system_template.thrift"
 include "system_interface.thrift"
 include "system_role_menu.thrift"
 include "system_role_user.thrift"
+include "system_bulletin.thrift"
+include "system_education.thrift"
 
 service SystemService {
     /******************************************************字典*************************************************************/
@@ -105,4 +107,28 @@ service SystemService {
     // 删除系统模板
     bool deleteSystemTemplate(1: system_template.SystemTemplateRequest systemTemplateRequest)
     /******************************************************模板*************************************************************/
+    /******************************************************公告*************************************************************/
+    // 分页查询系统公告
+    system_bulletin.SystemBulletinPageResponse querySystemBulletinPage(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    // 查询系统公告
+    system_bulletin.SystemBulletinResponse querySystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    // 创建系统公告
+    bool saveSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    // 修改系统公告
+    bool updateSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    // 删除系统公告
+    bool deleteSystemBulletin(1: system_bulletin.SystemBulletinRequest systemBulletinRequest)
+    /******************************************************公告*************************************************************/
+    /******************************************************文案*************************************************************/
+    // 分页查询系统文案
+    system_education.SystemEducationPageResponse querySystemEducationPage(1: system_education.SystemEducationRequest systemEducationRequest)
+    // 查询系统文案
+    system_education.SystemEducationResponse querySystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    // 创建系统文案
+    bool saveSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    // 修改系统文案
+    bool updateSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    // 删除系统文案
+    bool deleteSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
+    /******************************************************文案*************************************************************/
 }

@@ -16,6 +16,13 @@ struct SystemDictHeaderRequest {
     11: optional i64 createTime                     // 创建时间
     12: optional i64 updateTime                     // 修改时间
     13: optional list<i64> idList
+
+    255: optional BaseQueryRequest params
+}
+
+struct BaseQueryRequest {
+    1: string beginTime
+    2: string endTime
 }
 
 struct SystemDictHeaderResponse {

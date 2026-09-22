@@ -3,21 +3,23 @@ namespace java user
 struct UserPositionRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
-    3: optional i64 userId                      // 用户id
-    4: optional double latitude                 // 纬度
-    5: optional double longitude                // 经度
-    6: string province                          // 省/州
-    7: string city                              // 城市
-    8: string district                          // 区县
-    9: string street                            // 街道
-    10: string fullAddress                      // 完整地址
-    11: string country                          // 国家
-    12: string countryCode                      // 国家代码
-    13: optional i8 isDelete                    // 删除标识 1：删除 0：未删除
-    14: optional i64 createdBy                  // 创建人
-    15: optional i64 updatedBy                  // 修改人
-    16: optional i64 createTime                 // 创建时间
-    17: optional i64 updateTime                 // 修改时间
+    3: optional i64 id
+    4: optional i64 userId                      // 用户id
+    5: optional double latitude                 // 纬度
+    6: optional double longitude                // 经度
+    7: string province                          // 省/州
+    8: string city                              // 城市
+    9: string district                          // 区县
+    10: string street                           // 街道
+    11: string fullAddress                      // 完整地址
+    12: string country                          // 国家
+    13: string countryCode                      // 国家代码
+    14: optional i8 isDelete                    // 删除标识 1：删除 0：未删除
+    15: optional i64 createdBy                  // 创建人
+    16: optional i64 updatedBy                  // 修改人
+    17: optional i64 createTime                 // 创建时间
+    18: optional i64 updateTime                 // 修改时间
+    19: list<i64> idList
 }
 
 struct UserPositionResponse {
