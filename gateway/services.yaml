@@ -137,6 +137,9 @@ servers:
       - path: /api/system/updateSystemRole
         method: UpdateSystemRole
         http_method: POST
+      - path: /api/system/updateSystemRoleStatus
+        method: UpdateSystemRoleStatus
+        http_method: POST
       - path: /api/system/deleteSystemRole
         method: DeleteSystemRole
         http_method: POST

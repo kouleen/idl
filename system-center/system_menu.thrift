@@ -22,12 +22,13 @@ struct SystemMenuRequest {
     15: optional i8 status                          // 状态
     16: string perms                                // 权限标识
     17: string icon                                 // 菜单图标
-    18: optional i64 roleId                         // 角色ID
-    19: optional i8 isDelete                        // 删除标识 1：删除 0：未删除
-    20: optional i64 createdBy                      // 创建人
-    21: optional i64 updatedBy                      // 修改人
-    22: optional i64 createTime                     // 创建时间
-    23: optional i64 updateTime                     // 修改时间
+    18: string remark                               // 备注
+    19: optional i64 roleId                         // 角色ID
+    20: optional i8 isDelete                        // 删除标识 1：删除 0：未删除
+    21: optional i64 createdBy                      // 创建人
+    22: optional i64 updatedBy                      // 修改人
+    23: optional i64 createTime                     // 创建时间
+    24: optional i64 updateTime                     // 修改时间
 
     255: optional base_query.BaseQueryRequest params
 }
@@ -48,12 +49,13 @@ struct SystemMenuResponse {
     13: optional i8 status                  // 状态
     14: string perms                        // 权限标识
     15: string icon                         // 菜单图标
-    16: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    17: i64 createdBy                       // 创建人
-    18: i64 updatedBy                       // 修改人
-    19: i64 createTime                      // 创建时间
-    20: i64 updateTime                      // 修改时间
-    21: list<SystemMenuResponse> children   // 子菜单
+    16: string remark                       // 备注
+    17: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    18: i64 createdBy                       // 创建人
+    19: i64 updatedBy                       // 修改人
+    20: i64 createTime                      // 创建时间
+    21: i64 updateTime                      // 修改时间
+    22: list<SystemMenuResponse> children   // 子菜单
 }
 
 struct SystemMenuPageResponse {

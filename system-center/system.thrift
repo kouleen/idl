@@ -76,6 +76,8 @@ service SystemService {
     bool SaveSystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
     // 修改角色信息
     bool UpdateSystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
+    // 修改角色状态
+    bool UpdateSystemRoleStatus(1: system_role.SystemRoleRequest systemRoleRequest)
     // 删除角色信息
     bool DeleteSystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
     /******************************************************角色*************************************************************/
