@@ -7,7 +7,6 @@ include "system_menu.thrift"
 include "system_role.thrift"
 include "system_template.thrift"
 include "system_interface.thrift"
-include "system_role_menu.thrift"
 include "system_role_user.thrift"
 include "system_bulletin.thrift"
 include "system_education.thrift"
@@ -81,12 +80,6 @@ service SystemService {
     // 删除角色信息
     bool DeleteSystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
     /******************************************************角色*************************************************************/
-    /******************************************************角色菜单**********************************************************/
-    // 创建角色菜单
-    bool SaveSystemRoleMenu(1: system_role_menu.SystemRoleMenuRequest systemRoleMenuRequest)
-    // 修改角色菜单
-    bool UpdateSystemRoleMenu(1: system_role_menu.SystemRoleMenuRequest systemRoleMenuRequest)
-    /******************************************************角色菜单**********************************************************/
     /******************************************************角色用户**********************************************************/
     // 分页查询角色绑定的用户信息
     system_role_user.SystemRoleUserPageResponse QuerySystemRoleUserPage(1: system_role_user.SystemRoleUserRequest systemRoleUserRequest)
