@@ -21,6 +21,7 @@ struct SystemLoginLogRequest {
     14: optional i64 updatedBy
     15: optional i64 createTime
     16: optional i64 updateTime
+    17: list<i64> idList
 
     255: optional base_query.BaseQueryRequest params
 }

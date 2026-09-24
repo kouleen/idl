@@ -10,6 +10,7 @@ include "system_interface.thrift"
 include "system_role_user.thrift"
 include "system_bulletin.thrift"
 include "system_education.thrift"
+include "system_login_log.thrift"
 
 service SystemService {
     /******************************************************字典*************************************************************/
@@ -126,4 +127,12 @@ service SystemService {
     // 删除系统文案
     bool DeleteSystemEducation(1: system_education.SystemEducationRequest systemEducationRequest)
     /******************************************************文案*************************************************************/
+    /******************************************************登录日志*************************************************************/
+    // 分页查询系统登录日志
+    system_login_log.SystemLoginLogPageResponse QuerySystemLoginLogPage(1: system_login_log.SystemLoginLogRequest systemLoginLogRequest)
+    // 强退系统登录用户
+    bool ForcedRetreatSystemLoginLog(1: system_login_log.SystemLoginLogRequest systemLoginLogRequest)
+    // 删除系统登录日志
+    bool DeleteSystemLoginLog(1: system_login_log.SystemLoginLogRequest systemLoginLogRequest)
+    /******************************************************登录日志*************************************************************/
 }
