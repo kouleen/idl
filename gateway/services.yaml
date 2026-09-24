@@ -206,4 +206,13 @@ servers:
       - path: /api/system/deleteSystemEducation
         method: DeleteSystemEducation
         http_method: POST
+      - path: /api/system/querySystemLoginLogPage
+        method: QuerySystemLoginLogPage
+        http_method: GET
+      - path: /api/system/forcedRetreat
+        method: ForcedRetreatSystemLoginLog
+        http_method: POST
+      - path: /api/system/deleteSystemLoginLog
+        method: DeleteSystemLoginLog
+        http_method: POST
 
