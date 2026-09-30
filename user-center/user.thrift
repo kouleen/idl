@@ -6,6 +6,7 @@ include "user_login.thrift"
 include "user_header.thrift"
 include "user_register.thrift"
 include "user_position.thrift"
+include "user_identity.thrift"
 
 service UserService {
     // 发送图形验证码
@@ -26,6 +27,10 @@ service UserService {
     list<user_header.UserHeaderResponse> QueryUserHeaderList(1: user_header.UserHeaderRequest req)
     // 查询登录用户信息
     user_header.UserHeaderResponse QueryUserHeaderInfo(1: user_header.UserHeaderRequest req)
+    // 修改用户状态
+    bool UpdateUserHeaderStatus(1: user_header.UserHeaderRequest req)
+    // 删除用户/注销用户
+    bool DeleteUserHeader(1: user_header.UserHeaderRequest req)
 
     // 分页查询用户位置信息
     user_position.UserPositionPageResponse QueryUserPositionPage(1: user_position.UserPositionRequest req)
@@ -38,4 +43,16 @@ service UserService {
     bool UpdateUserPosition(1: user_position.UserPositionRequest req)
     // 删除用户位置
     bool DeleteUserPosition(1: user_position.UserPositionRequest req)
+
+    // 分页查询用户证件信息
+    user_identity.UserIdentityPageResponse QueryUserIdentityPage(1: user_identity.UserIdentityRequest req)
+    // 查询用户证件信息
+    list<user_identity.UserIdentityResponse> QueryUserIdentityList(1: user_identity.UserIdentityRequest req)
+    user_identity.UserIdentityResponse QueryUserIdentity(1: user_identity.UserIdentityRequest req)
+    // 创建用户证件信息
+    bool SaveUserIdentity(1: user_identity.UserIdentityRequest req)
+    // 修改用户证件信息
+    bool UpdateUserIdentity(1: user_identity.UserIdentityRequest req)
+    // 删除用户证件信息
+    bool DeleteUserIdentity(1: user_identity.UserIdentityRequest req)
 }
