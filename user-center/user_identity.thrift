@@ -12,6 +12,7 @@ struct UserIdentityRequest {
     5: string username                      // 用户名
     6: optional i8 gender                   // 性别 1：男 2：女
     7: string phone                         // 手机号
+    8: string remark                        // 备注
     9: optional i8 isDelete                 // 删除标识 1：删除 0：未删除
     10: i64 createdBy                       // 创建人
     11: i64 updatedBy                       // 修改人
@@ -27,6 +28,7 @@ struct UserIdentityResponse {
     3: string username                      // 用户名
     5: optional i8 gender                   // 性别 1：男 2：女
     7: string phone                         // 手机号
+    8: string remark                        // 备注
     9: optional i8 isDelete                 // 删除标识 1：删除 0：未删除
     10: i64 createdBy                       // 创建人
     11: i64 updatedBy                       // 修改人
