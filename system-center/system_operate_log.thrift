@@ -48,6 +48,7 @@ struct SystemOperateLogResponse {
     15: i64 updatedBy
     16: i64 createTime
     17: i64 updateTime
+    18: string username
 }
 
 struct SystemOperateLogPageResponse {
