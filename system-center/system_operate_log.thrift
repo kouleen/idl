@@ -10,7 +10,7 @@ struct SystemOperateLogRequest {
     3: optional i64 id                              // ID
     4: string module
     5: string business
-    6: optional i8 type
+    6: string type
     7: string ip
     8: string location
     9: string os
@@ -31,7 +31,7 @@ struct SystemOperateLogResponse {
     3: i64 id                              // ID
     4: string module
     5: string business
-    6: optional i8 type
+    6: string type
     7: string ip
     8: string location
     9: string os
