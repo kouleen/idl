@@ -31,6 +31,12 @@ servers:
       - path: /api/user/queryUserHeaderInfo
         method: QueryUserHeaderInfo
         http_method: GET
+      - path: /api/user/updateUserHeaderStatus
+        method: UpdateUserHeaderStatus
+        http_method: POST
+      - path: /api/user/deleteUserHeader
+        method: DeleteUserHeader
+        http_method: POST
       - path: /api/user/queryUserPositionPage
         method: QueryUserPositionPage
         http_method: GET
