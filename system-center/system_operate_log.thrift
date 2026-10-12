@@ -4,6 +4,11 @@ namespace py system
 
 include "../common/base_query.thrift"
 
+const string CREATE = "CREATE"
+const string DELETE = "DELETE"
+const string QUERY = "QUERY"
+const string UPDATE = "UPDATE"
+
 struct SystemOperateLogRequest {
     1: optional i64 current = 1
     2: optional i64 size = 10
