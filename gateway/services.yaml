@@ -221,4 +221,11 @@ servers:
       - path: /api/system/deleteSystemLoginLog
         method: DeleteSystemLoginLog
         http_method: POST
+      - path: /api/system/querySystemOperateLogPage
+        method: QuerySystemOperateLogPage
+        http_method: GET
+      - path: /api/system/deleteSystemOperateLog
+        method: DeleteSystemOperateLog
+        http_method: POST
+
 
