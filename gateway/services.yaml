@@ -49,6 +49,25 @@ servers:
       - path: /api/user/deleteUserPosition
         method: DeleteUserPosition
         http_method: POST
+      - path: /api/user/queryUserIdentityPage
+        method: QueryUserIdentityPage
+        http_method: GET
+      - path: /api/user/QueryUserIdentityList
+        method: queryUserIdentityList
+        http_method: GET
+      - path: /api/user/queryUserIdentity
+        method: QueryUserIdentity
+        http_method: GET
+      - path: /api/user/saveUserIdentity
+        method: SaveUserIdentity
+        http_method: POST
+      - path: /api/user/updateUserIdentity
+        method: UpdateUserIdentity
+        http_method: POST
+      - path: /api/user/deleteUserIdentity
+        method: DeleteUserIdentity
+        http_method: POST
+
   system:
     service_name: system.service.rpc   # etcd 注册的服务名
     idl_path: system-center/system.thrift
