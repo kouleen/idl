@@ -2,6 +2,11 @@ namespace java io.github.kouleen.thrift.user
 namespace go user
 namespace py user
 
+struct UpdateUserPwd {
+    1: string newPassword               // 新密码
+    2: string oldPassword               // 旧密码
+}
+
 struct LoginRequest {
     1: string username                  // 用户名
     2: string phone                     // 手机号

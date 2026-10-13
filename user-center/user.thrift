@@ -21,6 +21,12 @@ service UserService {
     bool ResetPwd(1: user_login.LoginRequest req)
     // 退出登录
     bool Logout(1: user_login.LoginRequest req)
+    // 查询个人信息
+    user_header.UserHeaderResponse QueryUserProfile(1: user_header.UserHeaderRequest req)
+    // 修改个人信息
+    bool UpdateUserProfile(1: user_header.UserHeaderRequest req)
+    // 修改个人密码
+    bool UpdateUserPassword(1: user_login.UpdateUserPwd req)
     // 分页查询用户信息
     user_header.UserHeaderPageResponse QueryUserHeaderPage(1: user_header.UserHeaderRequest req)
     // 查询用户信息

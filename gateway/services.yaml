@@ -22,6 +22,15 @@ servers:
       - path: /api/user/logout
         method: Logout
         http_method: POST
+      - path: /api/user/queryUserProfile
+        method: QueryUserProfile
+        http_method: GET
+      - path: /api/user/updateUserProfile
+        method: UpdateUserProfile
+        http_method: POST
+      - path: /api/user/updateUserPwd
+        method: UpdateUserPassword
+        http_method: POST
       - path: /api/user/queryUserHeaderPage
         method: QueryUserHeaderPage
         http_method: GET

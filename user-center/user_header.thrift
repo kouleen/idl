@@ -39,6 +39,7 @@ struct UserHeaderResponse {
     11: i64 updatedBy                       // 修改人
     12: i64 createTime                      // 创建时间
     13: i64 updateTime                      // 修改时间
+    14: string roleNames                    // 角色名称
 }
 
 struct UserHeaderPageResponse {
