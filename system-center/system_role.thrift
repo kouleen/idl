@@ -19,6 +19,7 @@ struct SystemRoleRequest {
     12: optional i64 updateTime                     // 修改时间
     13: optional list<i64> idList
     14: list<i64> menuIds
+    15: optional i64 userId
 
     255: optional base_query.BaseQueryRequest params
 }

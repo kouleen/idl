@@ -72,6 +72,8 @@ service SystemService {
     // 分页查询角色信息
     system_role.SystemRolePageResponse QuerySystemRolePage(1: system_role.SystemRoleRequest systemRoleRequest)
     // 查询角色信息
+    list<system_role.SystemRoleResponse> QuerySystemRoleList(1: system_role.SystemRoleRequest systemRoleRequest)
+    // 查询角色信息
     system_role.SystemRoleResponse QuerySystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
     // 创建角色信息
     bool SaveSystemRole(1: system_role.SystemRoleRequest systemRoleRequest)
