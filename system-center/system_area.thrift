@@ -33,7 +33,7 @@ struct SystemAreaRequest {
 }
 
 struct SystemAreaResponse {
-    3: optional i64 id                              // ID
+    3: i64 id                                       // ID
     4: string areaCode                              // 地区代码
     5: string areaName                              // 地区名称
     6: string areaDesc                              // 地区描述
