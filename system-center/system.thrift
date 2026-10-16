@@ -5,6 +5,7 @@ namespace py system
 include "system_dict.thrift"
 include "system_menu.thrift"
 include "system_role.thrift"
+include "system_area.thrift"
 include "system_template.thrift"
 include "system_interface.thrift"
 include "system_role_user.thrift"
@@ -145,4 +146,21 @@ service SystemService {
     // 删除系统操作日志
     bool DeleteSystemOperateLog(1: system_operate_log.SystemOperateLogRequest systemOperateLogRequest)
     /******************************************************操作日志*************************************************************/
+
+    /******************************************************行政区域*************************************************************/
+    // 分页查询区域信息
+    system_area.SystemAreaPageResponse QuerySystemAreaPage(1: system_area.SystemAreaRequest systemAreaRequest)
+    // 查询区域信息(树)
+    list<system_area.SystemAreaResponse> QuerySystemAreaTree(1: system_area.SystemAreaRequest systemAreaRequest)
+    // 查询区域信息
+    list<system_area.SystemAreaResponse> QuerySystemAreaList(1: system_area.SystemAreaRequest systemAreaRequest)
+    // 查询区域信息
+    system_area.SystemAreaResponse QuerySystemArea(1: system_area.SystemAreaRequest systemAreaRequest)
+    // 创建区域信息
+    bool SaveSystemArea(1: system_area.SystemAreaRequest systemAreaRequest)
+    // 修改区域信息
+    bool UpdateSystemArea(1: system_area.SystemAreaRequest systemAreaRequest)
+    // 删除区域信息
+    bool DeleteSystemArea(1: system_area.SystemAreaRequest systemAreaRequest)
+    /******************************************************行政区域*************************************************************/
 }
