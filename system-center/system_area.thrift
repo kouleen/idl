@@ -53,8 +53,6 @@ struct SystemAreaResponse {
     20: i64 updatedBy
     21: i64 createTime
     22: i64 updateTime
-
-    99: list<SystemAreaResponse> children           // 子区域
 }
 
 struct SystemAreaPageResponse {
