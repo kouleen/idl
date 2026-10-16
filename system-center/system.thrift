@@ -150,8 +150,6 @@ service SystemService {
     /******************************************************行政区域*************************************************************/
     // 分页查询区域信息
     system_area.SystemAreaPageResponse QuerySystemAreaPage(1: system_area.SystemAreaRequest systemAreaRequest)
-    // 查询区域信息(树)
-    list<system_area.SystemAreaResponse> QuerySystemAreaTree(1: system_area.SystemAreaRequest systemAreaRequest)
     // 查询区域信息
     list<system_area.SystemAreaResponse> QuerySystemAreaList(1: system_area.SystemAreaRequest systemAreaRequest)
     // 查询区域信息
