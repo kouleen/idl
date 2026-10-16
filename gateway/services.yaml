@@ -255,5 +255,27 @@ servers:
       - path: /api/system/deleteSystemOperateLog
         method: DeleteSystemOperateLog
         http_method: POST
+      - path: /api/system/querySystemAreaPage
+        method: QuerySystemAreaPage
+        http_method: GET
+      - path: /api/system/querySystemAreaTree
+        method: QuerySystemAreaTree
+        http_method: GET
+      - path: /api/system/querySystemAreaList
+        method: QuerySystemAreaList
+        http_method: GET
+      - path: /api/system/querySystemArea
+        method: QuerySystemArea
+        http_method: GET
+      - path: /api/system/saveSystemArea
+        method: SaveSystemArea
+        http_method: POST
+      - path: /api/system/updateSystemArea
+        method: UpdateSystemArea
+        http_method: POST
+      - path: /api/system/deleteSystemArea
+        method: DeleteSystemArea
+        http_method: POST
+
 
 
