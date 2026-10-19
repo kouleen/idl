@@ -43,5 +43,5 @@ struct RoomHeaderResponse {
 
 struct RoomHeaderPageResponse {
     1: required i64 total,
-    2: list<RoomHeaderPageResponse> records
+    2: list<RoomHeaderResponse> records
 }
