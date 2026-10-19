@@ -6,6 +6,7 @@ include "system_dict.thrift"
 include "system_menu.thrift"
 include "system_role.thrift"
 include "system_area.thrift"
+include "system_file.thrift"
 include "system_template.thrift"
 include "system_interface.thrift"
 include "system_role_user.thrift"
@@ -161,4 +162,8 @@ service SystemService {
     // 删除区域信息
     bool DeleteSystemArea(1: system_area.SystemAreaRequest systemAreaRequest)
     /******************************************************行政区域*************************************************************/
+
+    /******************************************************文件上传*************************************************************/
+    system_file.SystemFileResponse UploadSystemFile(1: system_file.SystemFileRequest systemFileRequest)
+    /******************************************************文件上传*************************************************************/
 }

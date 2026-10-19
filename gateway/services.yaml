@@ -276,6 +276,10 @@ servers:
       - path: /api/system/deleteSystemArea
         method: DeleteSystemArea
         http_method: POST
+      - path: /api/system/uploadSystemFile
+        method: UploadSystemFile
+        http_method: POST
+
 
 
 
