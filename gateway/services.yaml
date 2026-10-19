@@ -28,6 +28,9 @@ servers:
       - path: /api/user/updateUserProfile
         method: UpdateUserProfile
         http_method: POST
+      - path: /api/user/updateUserAvatar
+        method: UpdateUserAvatar
+        http_method: POST
       - path: /api/user/updateUserPwd
         method: UpdateUserPassword
         http_method: POST

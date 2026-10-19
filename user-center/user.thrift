@@ -25,6 +25,8 @@ service UserService {
     user_header.UserHeaderResponse QueryUserProfile(1: user_header.UserHeaderRequest req)
     // 修改个人信息
     bool UpdateUserProfile(1: user_header.UserHeaderRequest req)
+    // 修改个人头像
+    binary UpdateUserAvatar(1: user_header.UserHeaderRequest req)
     // 修改个人密码
     bool UpdateUserPassword(1: user_login.UpdateUserPwd req)
     // 分页查询用户信息
