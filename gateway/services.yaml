@@ -283,6 +283,29 @@ servers:
         method: UploadSystemFile
         http_method: POST
 
+  room:
+    service_name: room.service.rpc   # etcd 注册的服务名
+    idl_path: room-center/room.thrift
+    routes:
+      - path: /api/room/queryRoomHeaderPage
+        method: QueryRoomHeaderPage
+        http_method: GET
+      - path: /api/room/QueryRoomHeaderList
+        method: queryRoomHeaderList
+        http_method: GET
+      - path: /api/room/QueryRoomHeader
+        method: queryRoomHeader
+        http_method: GET
+      - path: /api/room/CreateRoomHeader
+        method: createRoomHeader
+        http_method: POST
+      - path: /api/room/UpdateRoomHeader
+        method: updateRoomHeader
+        http_method: POST
+      - path: /api/room/DeleteRoomHeader
+        method: deleteRoomHeader
+        http_method: POST
+
 
 
 
