@@ -290,20 +290,20 @@ servers:
       - path: /api/room/queryRoomHeaderPage
         method: QueryRoomHeaderPage
         http_method: GET
-      - path: /api/room/QueryRoomHeaderList
-        method: queryRoomHeaderList
+      - path: /api/room/queryRoomHeaderList
+        method: QueryRoomHeaderList
         http_method: GET
-      - path: /api/room/QueryRoomHeader
-        method: queryRoomHeader
+      - path: /api/room/queryRoomHeader
+        method: QueryRoomHeader
         http_method: GET
-      - path: /api/room/CreateRoomHeader
-        method: createRoomHeader
+      - path: /api/room/createRoomHeader
+        method: CreateRoomHeader
         http_method: POST
-      - path: /api/room/UpdateRoomHeader
-        method: updateRoomHeader
+      - path: /api/room/updateRoomHeader
+        method: UpdateRoomHeader
         http_method: POST
-      - path: /api/room/DeleteRoomHeader
-        method: deleteRoomHeader
+      - path: /api/room/deleteRoomHeader
+        method: DeleteRoomHeader
         http_method: POST
 
 
