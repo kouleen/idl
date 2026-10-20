@@ -4,5 +4,5 @@ namespace py common
 
 enum BaseStatus {
     DISABLED = 0
-    ENABLE = 1
+    ENABLE
 }

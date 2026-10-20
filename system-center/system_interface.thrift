@@ -5,8 +5,8 @@ namespace py system
 include "../common/base_query.thrift"
 
 struct SystemInterfaceRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id                      // ID
     4: string requestPath                   // 请求路径
     5: string interfaceName                 // 接口全类名
@@ -49,7 +49,7 @@ struct SystemInterfacePageResponse {
 }
 
 enum MethodType {
-    GET     = 1
+    GET
     HEAD    = 2
     POST    = 3
     PUT     = 4

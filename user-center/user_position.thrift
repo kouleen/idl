@@ -5,8 +5,8 @@ namespace py user
 include "../common/base_query.thrift"
 
 struct UserPositionRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id
     4: optional i64 userId                      // 用户id
     5: optional double latitude                 // 纬度

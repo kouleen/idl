@@ -29,7 +29,7 @@ struct CaptchaResponse {
 }
 
 enum LoginType {
-    LOGIN_PHONE = 1         // 手机号登录
+    LOGIN_PHONE         // 手机号登录
     LOGIN_PWD   = 2         // 密码登录
 }
 

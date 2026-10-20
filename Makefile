@@ -53,11 +53,12 @@ thrift:
 
 lint: install
 	@echo "==> 校验 Thrift 文件语法..."
+	go install github.com/cloudwego/thriftgo@latest
 	@for file in $(THRIFT_FILES); do \
 		echo "    checking $$file"; \
-		$(KITEX) -module github.com/kouleen/idl -client "$$file" -o /dev/null 2>&1 || { \
-			echo "    错误: $$file 存在语法问题"; \
-			exit 1; \
+		thriftgo -i ./ -g go:skip_go_gen "$$file" 2>&1 || { \
+		   echo "    错误: $$file 存在语法问题"; \
+		   exit 1; \
 		}; \
 	done
 	@echo "==> 所有 Thrift 文件语法校验通过"

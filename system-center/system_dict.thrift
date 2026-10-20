@@ -5,8 +5,8 @@ namespace py system
 include "../common/base_query.thrift"
 
 struct SystemDictHeaderRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id                              // ID
     4: string dictName                              // 字典名称
     5: string dictType                              // 字典类型
@@ -42,8 +42,8 @@ struct SystemDictHeaderPageResponse {
 }
 
 struct SystemDictLineRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id                              // ID
     4: string dictCode                              // 字典编码
     5: string dictValue                             // 字典值

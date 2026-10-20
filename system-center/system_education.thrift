@@ -5,8 +5,8 @@ namespace py system
 include "../common/base_query.thrift"
 
 struct SystemEducationRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id (go.tag="json:\"id\"") // ID主键
     4: string title
     5: optional i8 hits

@@ -5,8 +5,8 @@ namespace py system
 include "../common/base_query.thrift"
 
 struct SystemTemplateRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id              // ID
     4: string templateCode          // 模板编码
     5: string templateName          // 模板名称

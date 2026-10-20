@@ -10,8 +10,8 @@ const string QUERY = "QUERY"
 const string UPDATE = "UPDATE"
 
 struct SystemOperateLogRequest {
-    1: optional i64 current = 1
-    2: optional i64 size = 10
+    1: optional i64 current
+    2: optional i64 size
     3: optional i64 id                              // ID
     4: string module
     5: string business
