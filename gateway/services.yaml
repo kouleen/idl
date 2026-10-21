@@ -306,6 +306,32 @@ servers:
         method: DeleteRoomHeader
         http_method: POST
 
+  workflow:
+    service_name: workflow.service.rpc   # etcd 注册的服务名
+    idl_path: workflow-center/workflow.thrift
+    routes:
+      - path: /api/workflow/queryWorkflowSegmentPage
+        method: QueryWorkflowSegmentPage
+        http_method: GET
+      - path: /api/workflow/queryWorkflowSegmentList
+        method: QueryWorkflowSegmentList
+        http_method: GET
+      - path: /api/workflow/queryWorkflowSegment
+        method: QueryWorkflowSegment
+        http_method: GET
+      - path: /api/workflow/saveWorkflowSegment
+        method: SaveWorkflowSegment
+        http_method: POST
+      - path: /api/workflow/updateWorkflowSegment
+        method: UpdateWorkflowSegment
+        http_method: POST
+      - path: /api/workflow/deleteWorkflowSegment
+        method: DeleteWorkflowSegment
+        http_method: POST
+      - path: /api/workflow/updateWorkflowSegmentStatus
+        method: UpdateWorkflowSegmentStatus
+        http_method: POST
+
 
 
 
