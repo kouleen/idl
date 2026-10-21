@@ -15,7 +15,7 @@ struct WorkflowSegmentRequest {
     8: optional i64 endId                           // 上限ID
     9: optional i8 status                           // 状态
     10: string remark                               // 备注
-    11: optional i8 isDelete
+    11: optional i8 isDelete                        // 删除
     12: optional i64 createdBy
     13: optional i64 updatedBy
     14: optional i64 createTime
