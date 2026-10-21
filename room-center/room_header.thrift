@@ -20,8 +20,8 @@ struct RoomHeaderRequest {
     13: optional i64 updatedBy              // 修改人
     14: optional i64 createTime             // 创建时间
     15: optional i64 updateTime             // 修改时间
-    16: list<i64> idList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 

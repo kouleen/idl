@@ -23,8 +23,8 @@ struct UserPositionRequest {
     16: optional i64 updatedBy                  // 修改人
     17: optional i64 createTime                 // 创建时间
     18: optional i64 updateTime                 // 修改时间
-    19: list<i64> idList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 

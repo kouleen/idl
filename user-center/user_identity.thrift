@@ -18,7 +18,8 @@ struct UserIdentityRequest {
     11: i64 updatedBy                       // 修改人
     12: i64 createTime                      // 创建时间
     13: i64 updateTime                      // 修改时间
-    14: list<i64> idList
+
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 

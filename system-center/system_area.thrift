@@ -28,7 +28,7 @@ struct SystemAreaRequest {
     21: optional i64 createTime
     22: optional i64 updateTime
 
-    254: optional list<i64> idList
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 

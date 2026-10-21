@@ -21,8 +21,8 @@ struct SystemInterfaceRequest {
     14: optional i64 updatedBy              // 修改人
     15: optional i64 createTime             // 创建时间
     16: optional i64 updateTime             // 修改时间
-    17: optional list<i64> idList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 

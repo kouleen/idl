@@ -27,8 +27,8 @@ struct SystemOperateLogRequest {
     15: optional i64 updatedBy
     16: optional i64 createTime
     17: optional i64 updateTime
-    18: list<i64> idList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 
