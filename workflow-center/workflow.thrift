@@ -17,4 +17,6 @@ service WorkflowService {
     bool UpdateWorkflowSegmentStatus(1: workflow_segment.WorkflowSegmentRequest req)
     // 删除工作流程号段信息
     bool DeleteWorkflowSegment(1: workflow_segment.WorkflowSegmentRequest req)
+    // 抢占一段工作流程号段
+    bool FetchWorkflowSegment(1: workflow_segment.WorkflowSegmentRequest req)
 }
