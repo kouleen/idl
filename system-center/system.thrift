@@ -14,6 +14,7 @@ include "system_bulletin.thrift"
 include "system_education.thrift"
 include "system_login_log.thrift"
 include "system_operate_log.thrift"
+include "system_change_log.thrift"
 
 service SystemService {
     /******************************************************字典*************************************************************/
@@ -147,6 +148,13 @@ service SystemService {
     // 删除系统操作日志
     bool DeleteSystemOperateLog(1: system_operate_log.SystemOperateLogRequest systemOperateLogRequest)
     /******************************************************操作日志*************************************************************/
+
+    /******************************************************变更日志*************************************************************/
+    // 分页查询系统变更日志
+    system_change_log.SystemChangeLogPageResponse QuerySystemChangeLogPage(1: system_change_log.SystemChangeLogRequest systemChangeLogRequest)
+    // 删除系统变更日志
+    bool DeleteSystemChangeLog(1: system_change_log.SystemChangeLogRequest systemChangeLogRequest)
+    /******************************************************变更日志*************************************************************/
 
     /******************************************************行政区域*************************************************************/
     // 分页查询区域信息

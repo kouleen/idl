@@ -258,6 +258,12 @@ servers:
       - path: /api/system/deleteSystemOperateLog
         method: DeleteSystemOperateLog
         http_method: POST
+      - path: /api/system/querySystemChangeLogPage
+        method: QuerySystemChangeLogPage
+        http_method: GET
+      - path: /api/system/deleteSystemChangeLog
+        method: DeleteSystemChangeLog
+        http_method: POST
       - path: /api/system/querySystemAreaPage
         method: QuerySystemAreaPage
         http_method: GET
