@@ -37,10 +37,10 @@ struct RoomHeaderResponse {
     10: optional i8 status                  // 房间状态
     11: string flowNo                       // 流程单号
     12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: optional i64 createdBy              // 创建人
-    14: optional i64 updatedBy              // 修改人
-    15: optional i64 createTime             // 创建时间
-    16: optional i64 updateTime             // 修改时间
+    13: i64 createdBy              // 创建人
+    14: i64 updatedBy              // 修改人
+    15: i64 createTime             // 创建时间
+    16: i64 updateTime             // 修改时间
 }
 
 struct RoomHeaderPageResponse {
