@@ -13,6 +13,8 @@ service RoomService {
     room_header.RoomHeaderResponse QueryRoomHeader(1: room_header.RoomHeaderRequest req)
     // 创建房间
     bool CreateRoomHeader(1: room_header.RoomHeaderRequest req)
+    // 提交房间
+    bool CommitRoomHeader(1: room_header.RoomHeaderRequest req)
     // 修改房间
     bool UpdateRoomHeader(1: room_header.RoomHeaderRequest req)
     // 删除房间
