@@ -337,6 +337,21 @@ servers:
       - path: /api/workflow/updateWorkflowSegmentStatus
         method: UpdateWorkflowSegmentStatus
         http_method: POST
+      - path: /api/workflow/queryWorkflowProcessPage
+        method: QueryWorkflowProcessPage
+        http_method: GET
+      - path: /api/workflow/queryWorkflowProcess
+        method: QueryWorkflowProcess
+        http_method: GET
+      - path: /api/workflow/saveWorkflowProcess
+        method: SaveWorkflowProcess
+        http_method: POST
+      - path: /api/workflow/updateWorkflowProcess
+        method: UpdateWorkflowProcess
+        http_method: POST
+      - path: /api/workflow/deleteWorkflowProcess
+        method: DeleteWorkflowProcess
+        http_method: POST
 
 
 
