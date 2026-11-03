@@ -20,6 +20,7 @@ struct WorkflowProcessRequest {
     14: optional i64 createTime
     15: optional i64 updateTime
 
+    253: bool auto                                  // 自动审批标识
     254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
@@ -37,6 +38,8 @@ struct WorkflowProcessResponse {
     13: i64 updatedBy
     14: i64 createTime
     15: i64 updateTime
+
+    254:string createByName
 }
 
 struct WorkflowProcessPageResponse {

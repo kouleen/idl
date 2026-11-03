@@ -16,11 +16,12 @@ struct RoomHeaderRequest {
     9: optional i8 open                     // 开播状态
     10: optional i8 status                  // 房间状态
     11: string flowNo                       // 流程单号
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: optional i64 createdBy              // 创建人
-    14: optional i64 updatedBy              // 修改人
-    15: optional i64 createTime             // 创建时间
-    16: optional i64 updateTime             // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: optional i64 createdBy              // 创建人
+    15: optional i64 updatedBy              // 修改人
+    16: optional i64 createTime             // 创建时间
+    17: optional i64 updateTime             // 修改时间
 
     254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
@@ -36,11 +37,12 @@ struct RoomHeaderResponse {
     9: optional i8 open                     // 开播状态
     10: optional i8 status                  // 房间状态
     11: string flowNo                       // 流程单号
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: i64 createdBy              // 创建人
-    14: i64 updatedBy              // 修改人
-    15: i64 createTime             // 创建时间
-    16: i64 updateTime             // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: i64 createdBy                       // 创建人
+    15: i64 updatedBy                       // 修改人
+    16: i64 createTime                      // 创建时间
+    17: i64 updateTime                      // 修改时间
 }
 
 struct RoomHeaderPageResponse {
