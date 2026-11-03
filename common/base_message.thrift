@@ -13,6 +13,7 @@ const string SYSTEM_FLOW_REVIEW_QUEUE = "system.flow.review.queue"
 const string ROOM_FLOW_REVIEW_QUEUE = "room.flow.review.queue"
 
 const string WORKFLOW_FLOW_REVIEW_QUEUE = "workflow.flow.review.queue"
+const string WORKFLOW_FLOW_FAIL_QUEUE = "workflow.flow.fail.queue"
 
 const string PAYMENT_FLOW_REVIEW_QUEUE = "payment.flow.review.queue"
 
