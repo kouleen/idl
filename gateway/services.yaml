@@ -308,6 +308,9 @@ servers:
       - path: /api/room/updateRoomHeader
         method: UpdateRoomHeader
         http_method: POST
+      - path: /api/room/commitRoomHeader
+        method: CommitRoomHeader
+        http_method: POST
       - path: /api/room/deleteRoomHeader
         method: DeleteRoomHeader
         http_method: POST
