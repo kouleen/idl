@@ -18,7 +18,7 @@ service WorkflowService {
     bool UpdateWorkflowSegmentStatus(1: workflow_segment.WorkflowSegmentRequest req)
     // 删除工作流程号段信息
     bool DeleteWorkflowSegment(1: workflow_segment.WorkflowSegmentRequest req)
-    // 抢占一段工作流程号段
+    // 抢占一段工作流程号段(该方法设计为仅内部 RPC 调用)
     bool FetchWorkflowSegment(1: workflow_segment.WorkflowSegmentRequest req)
 
     // 分页查询工作流程单据信息

@@ -49,7 +49,7 @@ service SystemService {
     // 查询接口地址
     system_interface.SystemInterfaceResponse QuerySystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 创建接口
-    bool saveSystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
+    bool SaveSystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 修改接口
     bool UpdateSystemInterface(1: system_interface.SystemInterfaceRequest systemInterfaceRequest)
     // 删除接口

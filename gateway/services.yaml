@@ -52,6 +52,12 @@ servers:
       - path: /api/user/queryUserPositionPage
         method: QueryUserPositionPage
         http_method: GET
+      - path: /api/user/queryUserPositionList
+        method: QueryUserPositionList
+        http_method: GET
+      - path: /api/user/queryUserPosition
+        method: QueryUserPosition
+        http_method: GET
       - path: /api/user/saveUserPosition
         method: SaveUserPosition
         http_method: POST
@@ -64,8 +70,8 @@ servers:
       - path: /api/user/queryUserIdentityPage
         method: QueryUserIdentityPage
         http_method: GET
-      - path: /api/user/QueryUserIdentityList
-        method: queryUserIdentityList
+      - path: /api/user/queryUserIdentityList
+        method: QueryUserIdentityList
         http_method: GET
       - path: /api/user/queryUserIdentity
         method: QueryUserIdentity
@@ -162,8 +168,8 @@ servers:
       - path: /api/system/querySystemRolePage
         method: QuerySystemRolePage
         http_method: GET
-      - path: /api/system/querySystemRolePage
-        method: QuerySystemRolePage
+      - path: /api/system/querySystemRoleList
+        method: QuerySystemRoleList
         http_method: GET
       - path: /api/system/querySystemRole
         method: QuerySystemRole
@@ -191,12 +197,6 @@ servers:
         http_method: POST
       - path: /api/system/cancelSystemRoleUser
         method: CancelSystemRoleUser
-        http_method: POST
-      - path: /api/system/saveSystemRoleMenu
-        method: SaveSystemRoleMenu
-        http_method: POST
-      - path: /api/system/updateSystemRoleMenu
-        method: UpdateSystemRoleMenu
         http_method: POST
       - path: /api/system/querySystemTemplatePage
         method: QuerySystemTemplatePage
@@ -266,9 +266,6 @@ servers:
         http_method: POST
       - path: /api/system/querySystemAreaPage
         method: QuerySystemAreaPage
-        http_method: GET
-      - path: /api/system/querySystemAreaTree
-        method: QuerySystemAreaTree
         http_method: GET
       - path: /api/system/querySystemAreaList
         method: QuerySystemAreaList
