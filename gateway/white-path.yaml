@@ -7,3 +7,4 @@ white_path:
   - /api/user/resetPwd
   - /api/system/querySystemDictLineList
   - /api/system/querySystemInterfaceList
+  - /api/stream/syncStream

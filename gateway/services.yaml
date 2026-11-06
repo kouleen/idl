@@ -353,6 +353,63 @@ servers:
         method: DeleteWorkflowProcess
         http_method: POST
 
+  stream:
+    service_name: stream.service.rpc   # etcd 注册的服务名
+    idl_path: stream-center/stream.thrift
+    routes:
+      - path: /api/stream/syncStream
+        method: SyncStream
+        http_method: POST
+      - path: /api/stream/queryStreamServerPage
+        method: QueryStreamServerList
+        http_method: GET
+      - path: /api/stream/queryStreamServerList
+        method: QueryWorkflowProcess
+        http_method: GET
+      - path: /api/stream/queryStreamServer
+        method: QueryStreamServer
+        http_method: GET
+      - path: /api/stream/deleteStreamServer
+        method: DeleteStreamServer
+        http_method: POST
+      - path: /api/stream/queryStreamClientHeaderPage
+        method: QueryStreamClientHeaderPage
+        http_method: GET
+      - path: /api/stream/queryStreamClientHeaderList
+        method: QueryStreamClientHeaderList
+        http_method: GET
+      - path: /api/stream/queryStreamClientHeader
+        method: QueryStreamClientHeader
+        http_method: GET
+      - path: /api/stream/deleteStreamClientHeader
+        method: DeleteStreamClientHeader
+        http_method: POST
+      - path: /api/stream/queryStreamClientLinePage
+        method: QueryStreamClientLinePage
+        http_method: GET
+      - path: /api/stream/queryStreamClientLineList
+        method: QueryStreamClientLineList
+        http_method: GET
+      - path: /api/stream/queryStreamClientLine
+        method: QueryStreamClientLine
+        http_method: GET
+      - path: /api/stream/deleteStreamClientLine
+        method: DeleteStreamClientLine
+        http_method: POST
+      - path: /api/stream/queryStreamClientLogPage
+        method: QueryStreamClientLogPage
+        http_method: GET
+      - path: /api/stream/queryStreamClientLogList
+        method: QueryStreamClientLogList
+        http_method: GET
+      - path: /api/stream/queryStreamClientLog
+        method: QueryStreamClientLog
+        http_method: GET
+      - path: /api/stream/deleteStreamClientLog
+        method: DeleteStreamClientLog
+        http_method: POST
+
+
 
 
 
