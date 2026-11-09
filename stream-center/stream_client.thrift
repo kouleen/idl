@@ -16,11 +16,12 @@ struct StreamClientHeaderRequest {
     9: string app                           // 业务组标识
     10: string vhost                        // 虚拟主机
     11: optional i8 status                  // 状态
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: optional i64 createdBy              // 创建人
-    14: optional i64 updatedBy              // 修改人
-    15: optional i64 createTime             // 创建时间
-    16: optional i64 updateTime             // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: optional i64 createdBy              // 创建人
+    15: optional i64 updatedBy              // 修改人
+    16: optional i64 createTime             // 创建时间
+    17: optional i64 updateTime             // 修改时间
 
     254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
@@ -36,11 +37,12 @@ struct StreamClientHeaderResponse {
     9: string app                           // 业务组标识
     10: string vhost                        // 虚拟主机
     11: optional i8 status                  // 状态
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: i64 createdBy                       // 创建人
-    14: i64 updatedBy                       // 修改人
-    15: i64 createTime                      // 创建时间
-    16: i64 updateTime                      // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: i64 createdBy                       // 创建人
+    15: i64 updatedBy                       // 修改人
+    16: i64 createTime                      // 创建时间
+    17: i64 updateTime                      // 修改时间
 }
 
 struct StreamClientHeaderPageResponse {
@@ -56,11 +58,12 @@ struct StreamClientLineRequest {
     5: string streamId                      // SRS内部实例ID
     6: string action                        // 客户端类型
     11: optional i8 status                  // 状态
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: optional i64 createdBy              // 创建人
-    14: optional i64 updatedBy              // 修改人
-    15: optional i64 createTime             // 创建时间
-    16: optional i64 updateTime             // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: optional i64 createdBy              // 创建人
+    15: optional i64 updatedBy              // 修改人
+    16: optional i64 createTime             // 创建时间
+    17: optional i64 updateTime             // 修改时间
 
     254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
@@ -72,11 +75,12 @@ struct StreamClientLineResponse {
     5: string streamId                      // SRS内部实例ID
     6: string action                        // 客户端类型
     11: optional i8 status                  // 状态
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: i64 createdBy                       // 创建人
-    14: i64 updatedBy                       // 修改人
-    15: i64 createTime                      // 创建时间
-    16: i64 updateTime                      // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: i64 createdBy                       // 创建人
+    15: i64 updatedBy                       // 修改人
+    16: i64 createTime                      // 创建时间
+    17: i64 updateTime                      // 修改时间
 }
 
 struct StreamClientLinePageResponse {
@@ -91,11 +95,12 @@ struct StreamClientLogRequest {
     4: string clientId                      // 客户端ID
     5: string clientIp                      // 客户端IP
     11: optional i8 status                  // 状态
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: optional i64 createdBy              // 创建人
-    14: optional i64 updatedBy              // 修改人
-    15: optional i64 createTime             // 创建时间
-    16: optional i64 updateTime             // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: optional i64 createdBy              // 创建人
+    15: optional i64 updatedBy              // 修改人
+    16: optional i64 createTime             // 创建时间
+    17: optional i64 updateTime             // 修改时间
 
     254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
@@ -106,11 +111,12 @@ struct StreamClientLogResponse {
     4: string clientId                      // 客户端ID
     5: string clientIp                      // 客户端IP
     11: optional i8 status                  // 状态
-    12: optional i8 isDelete                // 删除标识 1：删除 0：未删除
-    13: i64 createdBy                       // 创建人
-    14: i64 updatedBy                       // 修改人
-    15: i64 createTime                      // 创建时间
-    16: i64 updateTime                      // 修改时间
+    12: string remark                       // 备注
+    13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
+    14: i64 createdBy                       // 创建人
+    15: i64 updatedBy                       // 修改人
+    16: i64 createTime                      // 创建时间
+    17: i64 updateTime                      // 修改时间
 }
 
 struct StreamClientLogPageResponse {

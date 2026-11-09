@@ -25,7 +25,8 @@ struct StreamServerRequest {
     3: optional i64 id
     4: string serverId                      // server标识
     5: string serviceId                     // SRS会话ID
-    10: optional i8 status                  // 状态
+    9: optional i8 status                   // 状态
+    10: string remark                       // 备注
     11: optional i8 isDelete                // 删除标识 1：删除 0：未删除
     12: optional i64 createdBy              // 创建人
     13: optional i64 updatedBy              // 修改人
@@ -40,7 +41,8 @@ struct StreamServerResponse {
     3: i64 id
     4: string serverId                      // server标识
     5: string serviceId                     // SRS会话ID
-    10: optional i8 status                  // 状态
+    9: optional i8 status                   // 状态
+    10: string remark                       // 备注
     11: optional i8 isDelete                // 删除标识 1：删除 0：未删除
     12: i64 createdBy                       // 创建人
     13: i64 updatedBy                       // 修改人
