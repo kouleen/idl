@@ -21,8 +21,8 @@ struct StreamClientHeaderRequest {
     14: optional i64 updatedBy              // 修改人
     15: optional i64 createTime             // 创建时间
     16: optional i64 updateTime             // 修改时间
-    17: list<i64> userIdList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 
@@ -61,8 +61,8 @@ struct StreamClientLineRequest {
     14: optional i64 updatedBy              // 修改人
     15: optional i64 createTime             // 创建时间
     16: optional i64 updateTime             // 修改时间
-    17: list<i64> userIdList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 
@@ -96,8 +96,8 @@ struct StreamClientLogRequest {
     14: optional i64 updatedBy              // 修改人
     15: optional i64 createTime             // 创建时间
     16: optional i64 updateTime             // 修改时间
-    17: list<i64> userIdList
 
+    254: list<i64> idList
     255: optional base_query.BaseQueryRequest params
 }
 
