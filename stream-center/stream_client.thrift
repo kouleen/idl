@@ -56,7 +56,6 @@ struct StreamClientLineRequest {
     3: optional i64 id
     4: string clientId                      // 客户端ID
     5: string streamId                      // SRS内部实例ID
-    6: string action                        // 客户端类型
     11: optional i8 status                  // 状态
     12: string remark                       // 备注
     13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
@@ -73,7 +72,6 @@ struct StreamClientLineResponse {
     3: i64 id
     4: string clientId                      // 客户端ID
     5: string streamId                      // SRS内部实例ID
-    6: string action                        // 客户端类型
     11: optional i8 status                  // 状态
     12: string remark                       // 备注
     13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
@@ -94,7 +92,7 @@ struct StreamClientLogRequest {
     3: optional i64 id
     4: string clientId                      // 客户端ID
     5: string clientIp                      // 客户端IP
-    11: optional i8 status                  // 状态
+    6: string action                        // 客户端类型
     12: string remark                       // 备注
     13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
     14: optional i64 createdBy              // 创建人
@@ -110,7 +108,7 @@ struct StreamClientLogResponse {
     3: i64 id
     4: string clientId                      // 客户端ID
     5: string clientIp                      // 客户端IP
-    11: optional i8 status                  // 状态
+    6: string action                        // 客户端类型
     12: string remark                       // 备注
     13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
     14: i64 createdBy                       // 创建人
