@@ -361,10 +361,10 @@ servers:
         method: SyncStream
         http_method: POST
       - path: /api/stream/queryStreamServerPage
-        method: QueryStreamServerList
+        method: QueryStreamServerPage
         http_method: GET
       - path: /api/stream/queryStreamServerList
-        method: QueryWorkflowProcess
+        method: QueryStreamServerList
         http_method: GET
       - path: /api/stream/queryStreamServer
         method: QueryStreamServer
