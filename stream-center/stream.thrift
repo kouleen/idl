@@ -21,13 +21,13 @@ service StreamService {
     stream_client.StreamClientHeaderPageResponse QueryStreamClientHeaderPage(1: stream_client.StreamClientHeaderRequest req)
     list<stream_client.StreamClientHeaderResponse> QueryStreamClientHeaderList(1: stream_client.StreamClientHeaderRequest req)
     stream_client.StreamClientHeaderResponse QueryStreamClientHeader(1: stream_client.StreamClientHeaderRequest req)
-    bool DeleteStreamClientHeader(1: stream_client.StreamClientHeaderRequest req)
+    bool StopStreamClientHeader(1: stream_client.StreamClientHeaderRequest req)
 
     // 分页查询流客户端连接
     stream_client.StreamClientLinePageResponse QueryStreamClientLinePage(1: stream_client.StreamClientLineRequest req)
     list<stream_client.StreamClientLineResponse> QueryStreamClientLineList(1: stream_client.StreamClientLineRequest req)
     stream_client.StreamClientLineResponse QueryStreamClientLine(1: stream_client.StreamClientLineRequest req)
-    bool DeleteStreamClientLine(1: stream_client.StreamClientLineRequest req)
+    bool StopStreamClientLine(1: stream_client.StreamClientLineRequest req)
 
     // 分页查询流客户端连接日志
     stream_client.StreamClientLogPageResponse QueryStreamClientLogPage(1: stream_client.StreamClientLogRequest req)

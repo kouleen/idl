@@ -381,8 +381,8 @@ servers:
       - path: /api/stream/queryStreamClientHeader
         method: QueryStreamClientHeader
         http_method: GET
-      - path: /api/stream/deleteStreamClientHeader
-        method: DeleteStreamClientHeader
+      - path: /api/stream/stopStreamClientHeader
+        method: StopStreamClientHeader
         http_method: POST
       - path: /api/stream/queryStreamClientLinePage
         method: QueryStreamClientLinePage
@@ -393,8 +393,8 @@ servers:
       - path: /api/stream/queryStreamClientLine
         method: QueryStreamClientLine
         http_method: GET
-      - path: /api/stream/deleteStreamClientLine
-        method: DeleteStreamClientLine
+      - path: /api/stream/stopStreamClientLine
+        method: StopStreamClientLine
         http_method: POST
       - path: /api/stream/queryStreamClientLogPage
         method: QueryStreamClientLogPage
