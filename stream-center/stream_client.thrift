@@ -56,6 +56,7 @@ struct StreamClientLineRequest {
     3: optional i64 id
     4: string clientId                      // 客户端ID
     5: string streamId                      // SRS内部实例ID
+    6: optional i8 ioType                   // 1 拉流 2推流
     11: optional i8 status                  // 状态
     12: string remark                       // 备注
     13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
@@ -72,6 +73,7 @@ struct StreamClientLineResponse {
     3: i64 id
     4: string clientId                      // 客户端ID
     5: string streamId                      // SRS内部实例ID
+    6: optional i8 ioType                   // 1 拉流 2推流
     11: optional i8 status                  // 状态
     12: string remark                       // 备注
     13: optional i8 isDelete                // 删除标识 1：删除 0：未删除
