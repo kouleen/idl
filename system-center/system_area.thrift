@@ -55,10 +55,10 @@ struct SystemAreaResponse {
 
     90: string remark                               // 备注
     91: optional i8 isDelete
-    92: optional i64 createdBy
-    93: optional i64 updatedBy
-    94: optional i64 createTime
-    95: optional i64 updateTime
+    92: i64 createdBy
+    93: i64 updatedBy
+    94: i64 createTime
+    95: i64 updateTime
 }
 
 struct SystemAreaPageResponse {
