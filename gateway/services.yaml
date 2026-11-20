@@ -198,6 +198,18 @@ servers:
       - path: /api/system/cancelSystemRoleUser
         method: CancelSystemRoleUser
         http_method: POST
+      - path: /api/system/querySystemRoleMenuList
+        method: QuerySystemRoleMenuList
+        http_method: GET
+      - path: /api/system/saveSystemRoleMenu
+        method: SaveSystemRoleMenu
+        http_method: POST
+      - path: /api/system/querySystemRoleAreaList
+        method: QuerySystemRoleAreaList
+        http_method: GET
+      - path: /api/system/saveSystemRoleArea
+        method: SaveSystemRoleArea
+        http_method: POST
       - path: /api/system/querySystemTemplatePage
         method: QuerySystemTemplatePage
         http_method: GET
