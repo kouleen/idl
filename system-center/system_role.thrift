@@ -14,7 +14,7 @@ struct SystemRoleRequest {
     7: string remark                                // 备注
     8: optional i32 isDelete                        // 删除标识 1：删除 0：未删除
     9: optional i64 createdBy                       // 创建人
-    10: optional i64 updatedBy                       // 修改人
+    10: optional i64 updatedBy                      // 修改人
     11: optional i64 createTime                     // 创建时间
     12: optional i64 updateTime                     // 修改时间
     13: list<i64> menuIds
@@ -34,7 +34,7 @@ struct SystemRoleResponse {
     7: i64 createdBy                    // 创建人
     8: i64 updatedBy                    // 修改人
     9: i64 createTime                   // 创建时间
-    10: i64 updateTime                   // 修改时间
+    10: i64 updateTime                  // 修改时间
     11: list<i64> menuIds
 }
 

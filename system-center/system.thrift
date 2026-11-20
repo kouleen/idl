@@ -10,6 +10,8 @@ include "system_file.thrift"
 include "system_template.thrift"
 include "system_interface.thrift"
 include "system_role_user.thrift"
+include "system_role_area.thrift"
+include "system_role_menu.thrift"
 include "system_bulletin.thrift"
 include "system_education.thrift"
 include "system_login_log.thrift"
@@ -97,6 +99,18 @@ service SystemService {
     // 批量取消角色用户
     bool CancelSystemRoleUser(1: system_role_user.SystemRoleUserRequest systemRoleUserRequest)
     /******************************************************角色用户**********************************************************/
+
+    /******************************************************角色菜单**********************************************************/
+    // 查询角色菜单列表
+    list<system_role_menu.SystemRoleMenuResponse> QuerySystemRoleMenuList(1: system_role_menu.SystemRoleMenuRequest systemRoleMenuRequest)
+    bool SaveSystemRoleMenu(1: system_role_menu.SystemRoleMenuRequest systemRoleMenuRequest)
+    /******************************************************角色菜单**********************************************************/
+
+    /******************************************************角色区域**********************************************************/
+    list<system_role_area.SystemRoleAreaResponse> QuerySystemRoleAreaList(1: system_role_area.SystemRoleAreaRequest systemRoleAreaRequest)
+    bool SaveSystemRoleArea(1: system_role_area.SystemRoleAreaRequest systemRoleAreaRequest)
+    /******************************************************角色区域**********************************************************/
+
     /******************************************************模板*************************************************************/
     // 分页查询系统模板
     system_template.SystemTemplatePageResponse QuerySystemTemplatePage(1: system_template.SystemTemplateRequest systemTemplateRequest)
