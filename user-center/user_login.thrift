@@ -17,6 +17,15 @@ struct LoginRequest {
     7: bool remember                    // 记住
 }
 
+struct SendPhoneRequest {
+    2: string phone                     // 手机号
+}
+
+struct SendPhoneResponse {
+    1: bool success
+    2: i64 countdown
+}
+
 struct LoginResponse {
     1: string accessToken
     2: i64 expireTime

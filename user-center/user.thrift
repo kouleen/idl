@@ -12,7 +12,7 @@ service UserService {
     // 发送图形验证码
     user_login.CaptchaResponse Captcha(1: user_login.LoginRequest req)
     // 发送手机号验证码
-    i64 SmsCode(1: string phone)
+    user_login.SendPhoneResponse SmsCode(1: user_login.SendPhoneRequest req)
     // 用户登录
     user_login.LoginResponse Login(1: user_login.LoginRequest req)
     // 用户注册
